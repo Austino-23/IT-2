@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Verification Desk — ContriTrack Admin</title>
+  <meta name="description" content="Reconcile incoming bank transfer slips, audit references, and approve member contribution credits.">
+
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+
+  <!-- Full App Shell -->
+  <div class="app-shell">
+
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- ADMINISTRATOR SIDEBAR -->
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Administrator Navigation">
+      <div>
+        <div class="sidebar-header">
+          <a href="index.html" class="nav-brand" aria-label="ContriTrack Home">
+            <div class="brand-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <span>Contri<span class="brand-accent">Track</span></span>
+          </a>
+          <button type="button" class="sidebar-close-btn" id="sidebar-close" aria-label="Close navigation sidebar">✕</button>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Admin Navigation Sections">
+          <span class="sidebar-section-title">Administration</span>
+          <a href="admin-dashboard.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Overview</span>
+          </a>
+
+          <a href="groups.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Groups &amp; Members</span>
+          </a>
+
+          <a href="verify-payments.html" class="sidebar-nav-item active" aria-current="page">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>Payment Verification</span>
+          </a>
+
+          <a href="reports.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+            <span>Reports &amp; Analytics</span>
+          </a>
+
+          <span class="sidebar-section-title">System</span>
+          <a href="account.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span>Notifications &amp; Profile</span>
+          </a>
+
+          <a href="dashboard.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+            <span>Member View Portal</span>
+          </a>
+
+          <a href="index.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Landing Page</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="sidebar-user-avatar" style="border-color: #10B981;" aria-hidden="true">SJ</div>
+          <div class="sidebar-user-meta">
+            <span class="sidebar-user-name">Sarah Jenkins</span>
+            <span class="sidebar-user-role" style="color: #10B981; font-weight: 700;">Super Administrator</span>
+          </div>
+        </div>
+        <a href="auth.html?mode=login" class="sidebar-logout-btn" title="Sign out" aria-label="Sign out">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN APPLICATION AREA -->
+    <div class="app-main">
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <div class="topbar-headings">
+            <h1>Payment Verification Desk</h1>
+            <p>Reconcile incoming bank slips, inspect transaction references, and approve member deposits.</p>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <a href="admin-dashboard.html" class="btn btn-secondary btn-sm">&larr; Back to Admin Overview</a>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <!-- Verification Security Notice -->
+        <div class="status-distinction-banner">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--emerald);" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <div style="font-size: 0.8rem;">
+            <strong>Verification Protocol:</strong> Approving a payment transitions it from <em>Pending</em> to <em>Verified</em>, crediting the member's cycle record and updating group pool totals. Ensure the session reference matches circle escrow statements.
+          </div>
+        </div>
+
+        <!-- 2-Column Split: Pending Queue (Left) & Inspector / Slip Viewer (Right) -->
+        <div class="schedule-split-layout">
+          <!-- Pending Queue Card -->
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div>
+                <h2 class="dashboard-card-title" style="font-size: 1.15rem;">Pending Audit Queue (8 Slips)</h2>
+                <p class="dashboard-card-subtitle">Select a payment submission to inspect the evidentiary slip.</p>
+              </div>
+            </div>
+
+            <div class="upcoming-list" id="verification-queue-list">
+              <!-- Item 1 -->
+              <div class="upcoming-item" style="border-left: 4px solid var(--amber);">
+                <div class="upcoming-date-box">
+                  <span class="upcoming-day-text">Today, 09:42 AM</span>
+                  <span class="upcoming-sub-date tabular-nums" style="font-family: monospace;">CTX-90188-NG</span>
+                </div>
+                <div class="upcoming-info">
+                  <div class="upcoming-group">Amara Chen · Alpha Thrift Syndicate</div>
+                  <div class="upcoming-amount tabular-nums" style="color: #10B981;">₦15,000.00</div>
+                </div>
+                <div class="upcoming-actions">
+                  <span class="badge-status status-pending" style="font-size: 0.725rem;">⏳ Pending Review</span>
+                  <button type="button" class="btn btn-primary btn-sm btn-inspect-slip" data-ref="CTX-90188-NG" data-member="Amara Chen" data-amount="15000" data-group="Alpha Thrift Syndicate · Cycle #4" data-slip="zenith_bank_transfer_oct20.pdf">
+                    Inspect Slip
+                  </button>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="upcoming-item" style="border-left: 4px solid var(--amber);">
+                <div class="upcoming-date-box">
+                  <span class="upcoming-day-text">Today, 09:15 AM</span>
+                  <span class="upcoming-sub-date tabular-nums" style="font-family: monospace;">CTX-90112-NG</span>
+                </div>
+                <div class="upcoming-info">
+                  <div class="upcoming-group">David Okafor · Family Home Builder</div>
+                  <div class="upcoming-amount tabular-nums" style="color: #10B981;">₦30,000.00</div>
+                </div>
+                <div class="upcoming-actions">
+                  <span class="badge-status status-pending" style="font-size: 0.725rem;">⏳ Pending Review</span>
+                  <button type="button" class="btn btn-primary btn-sm btn-inspect-slip" data-ref="CTX-90112-NG" data-member="David Okafor" data-amount="30000" data-group="Family Home Builder Fund" data-slip="gtb_mobile_slip_0915.jpg">
+                    Inspect Slip
+                  </button>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="upcoming-item" style="border-left: 4px solid var(--amber);">
+                <div class="upcoming-date-box">
+                  <span class="upcoming-day-text">Yesterday, 04:30 PM</span>
+                  <span class="upcoming-sub-date tabular-nums" style="font-family: monospace;">CTX-89100-NG</span>
+                </div>
+                <div class="upcoming-info">
+                  <div class="upcoming-group">Tariq Al-Mansoor · Alpha Thrift Syndicate</div>
+                  <div class="upcoming-amount tabular-nums" style="color: #10B981;">₦15,000.00</div>
+                </div>
+                <div class="upcoming-actions">
+                  <span class="badge-status status-pending" style="font-size: 0.725rem;">⏳ Pending Review</span>
+                  <button type="button" class="btn btn-primary btn-sm btn-inspect-slip" data-ref="CTX-89100-NG" data-member="Tariq Al-Mansoor" data-amount="15000" data-group="Alpha Thrift Syndicate · Cycle #4" data-slip="access_bank_slip_89100.png">
+                    Inspect Slip
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Inspector & Action Panel -->
+          <div class="dashboard-card" id="inspector-card">
+            <div class="dashboard-card-header">
+              <div>
+                <h3 class="dashboard-card-title" id="insp-title" style="font-size: 1.15rem;">Slip Audit Specification</h3>
+                <p class="dashboard-card-subtitle" id="insp-sub">Ref: CTX-90188-NG · Amara Chen</p>
+              </div>
+            </div>
+
+            <div class="modal-details-grid" style="margin-bottom: 1.25rem;">
+              <div class="detail-item">
+                <span class="detail-label">Depositor</span>
+                <span class="detail-val" id="insp-member">Amara Chen</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Amount</span>
+                <span class="detail-val tabular-nums" id="insp-amount" style="color: #10B981; font-weight: 800; font-size: 1.15rem;">₦15,000.00</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Circle Group</span>
+                <span class="detail-val" id="insp-group">Alpha Thrift Syndicate</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Payment Method</span>
+                <span class="detail-val">Bank transfer (Zenith)</span>
+              </div>
+            </div>
+
+            <!-- Receipt Visual Preview Box -->
+            <div class="receipt-preview-box" style="margin-bottom: 1.25rem;">
+              <div class="receipt-info">
+                <div class="receipt-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                  </svg>
+                </div>
+                <div class="receipt-text">
+                  <h5 id="insp-slipname">zenith_bank_transfer_oct20.pdf</h5>
+                  <p>320 KB · Uploaded by Member</p>
+                </div>
+              </div>
+              <button type="button" class="btn btn-outline btn-sm" onclick="alert('Demo Action: Simulating full-resolution receipt slip preview.');">
+                View Slip
+              </button>
+            </div>
+
+            <!-- Administrator Action Controls -->
+            <div class="form-group" style="margin-bottom: 1.25rem;">
+              <label for="admin-audit-note" class="form-label">
+                <span>Audit Note / Reconciled Account (Optional)</span>
+              </label>
+              <input type="text" id="admin-audit-note" class="form-input" placeholder="e.g. Matched against Zenith statement session 102948." value="Verified by Sarah Jenkins (Admin)">
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; align-items: center; justify-content: flex-end;">
+              <button type="button" class="btn btn-outline" id="btn-reject-slip" style="color: #DC2626; border-color: #FECACA;">
+                ✕ Reject / Flag Discrepancy
+              </button>
+              <button type="button" class="btn btn-primary" id="btn-approve-slip">
+                ✓ Approve &amp; Credit Deposit
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const inspectButtons = document.querySelectorAll('.btn-inspect-slip');
+      const approveBtn = document.getElementById('btn-approve-slip');
+      const rejectBtn = document.getElementById('btn-reject-slip');
+
+      let currentInspected = {
+        member: 'Amara Chen',
+        ref: 'CTX-90188-NG',
+        amount: '15000',
+        group: 'Alpha Thrift Syndicate · Cycle #4'
+      };
+
+      inspectButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const ref = btn.getAttribute('data-ref');
+          const member = btn.getAttribute('data-member');
+          const amount = btn.getAttribute('data-amount');
+          const group = btn.getAttribute('data-group');
+          const slip = btn.getAttribute('data-slip');
+
+          currentInspected = { ref, member, amount, group };
+
+          document.getElementById('insp-title').textContent = `Slip Audit: ${member}`;
+          document.getElementById('insp-sub').textContent = `Ref: ${ref}`;
+          document.getElementById('insp-member').textContent = member;
+          document.getElementById('insp-amount').textContent = '₦' + Number(amount).toLocaleString('en-NG', { minimumFractionDigits: 2 });
+          document.getElementById('insp-group').textContent = group;
+          document.getElementById('insp-slipname').textContent = slip;
+        });
+      });
+
+      approveBtn?.addEventListener('click', () => {
+        showVerifyToast(
+          'Payment Slip Verified',
+          `Payment of ₦${Number(currentInspected.amount).toLocaleString('en-NG', { minimumFractionDigits: 2 })} for ${currentInspected.member} is now verified and credited to ${currentInspected.group}.`,
+          'success'
+        );
+      });
+
+      rejectBtn?.addEventListener('click', () => {
+        showVerifyToast(
+          'Submission Flagged & Returned',
+          `Submission for ${currentInspected.member} marked as REJECTED. Reason: Reference session ID mismatch against bank statement. Notification queued.`,
+          'warning'
+        );
+      });
+
+      // Mobile sidebar toggle
+      const toggleBtn = document.getElementById('sidebar-toggle');
+      const closeBtn = document.getElementById('sidebar-close');
+      const sidebar = document.getElementById('app-sidebar');
+      const backdrop = document.getElementById('sidebar-backdrop');
+      if (toggleBtn && sidebar && backdrop) {
+        toggleBtn.addEventListener('click', () => {
+          sidebar.classList.add('open');
+          backdrop.classList.add('active');
+        });
+        const closeSidebar = () => {
+          sidebar.classList.remove('open');
+          backdrop.classList.remove('active');
+        };
+        if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+        backdrop.addEventListener('click', closeSidebar);
+      }
+
+      function showVerifyToast(title, message, type = 'success') {
+        let container = document.getElementById('verify-toast-container');
+        if (!container) {
+          container = document.createElement('div');
+          container.id = 'verify-toast-container';
+          container.className = 'admin-toast-container';
+          document.body.appendChild(container);
+        }
+
+        const toast = document.createElement('div');
+        toast.className = `admin-toast toast-${type}`;
+        toast.innerHTML = `
+          <div class="toast-content">
+            <div class="toast-title">${title}</div>
+            <div class="toast-message">${message}</div>
+          </div>
+          <button type="button" class="toast-close-btn" aria-label="Dismiss toast">✕</button>
+        `;
+
+        toast.querySelector('.toast-close-btn').addEventListener('click', () => toast.remove());
+        container.appendChild(toast);
+        setTimeout(() => toast.remove(), 4500);
+      }
+    });
+  </script>
+</body>
+</html>

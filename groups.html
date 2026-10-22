@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groups &amp; Members — ContriTrack</title>
+  <meta name="description" content="Create contribution groups, manage memberships, and organize your savings activities with ContriTrack.">
+
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+
+  <!-- Full Dashboard Shell -->
+  <div class="app-shell">
+
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- ======================================================================
+         SIDEBAR NAVIGATION
+         ====================================================================== -->
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Member Navigation">
+      <div>
+        <!-- Sidebar Brand Header -->
+        <div class="sidebar-header">
+          <a href="index.html" class="nav-brand" aria-label="ContriTrack Home">
+            <div class="brand-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <span>Contri<span class="brand-accent">Track</span></span>
+          </a>
+          <button type="button" class="sidebar-close-btn" id="sidebar-close" aria-label="Close navigation sidebar">✕</button>
+        </div>
+
+        <!-- Sidebar Navigation Links -->
+        <nav class="sidebar-nav" aria-label="Dashboard sections">
+          <span class="sidebar-section-title">Personal Savings</span>
+          <a href="dashboard.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Overview</span>
+          </a>
+
+          <a href="contributions.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+            <span>Contributions &amp; Payments</span>
+          </a>
+
+          <a href="schedule.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Contribution Schedule</span>
+          </a>
+
+          <a href="groups.html" class="sidebar-nav-item active" aria-current="page">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Groups &amp; Circles</span>
+          </a>
+
+          <span class="sidebar-section-title">Account</span>
+          <a href="account.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Notifications &amp; Profile</span>
+          </a>
+
+          <a href="admin-dashboard.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Admin Control Desk</span>
+          </a>
+
+          <a href="index.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Landing Page</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- User Profile & Log Out Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="sidebar-user-avatar" id="sidebar-avatar-val" aria-hidden="true">SJ</div>
+          <div class="sidebar-user-meta">
+            <span class="sidebar-user-name" id="sidebar-name-val">Sarah Jenkins</span>
+            <span class="sidebar-user-role">Circle Coordinator</span>
+          </div>
+        </div>
+        <a href="auth.html?mode=login" class="sidebar-logout-btn" title="Sign out" aria-label="Sign out">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN CONTENT AREA
+         ====================================================================== -->
+    <div class="app-main">
+      
+      <!-- Top Application Header -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle navigation menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="topbar-headings">
+            <h1>Groups &amp; Members</h1>
+            <p>Create contribution groups, manage memberships, and organize your savings activities.</p>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <button type="button" class="btn btn-primary btn-sm" id="btn-open-create-group">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Create New Group
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Dashboard Content Container -->
+      <main class="dashboard-content">
+
+        <!-- Demo Permissions & Role Switcher Bar -->
+        <div class="demo-role-bar" role="region" aria-label="Demo Permissions Simulator">
+          <div class="demo-role-info">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--emerald);" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <div>
+              <strong>DEMO PERMISSIONS:</strong> 
+              <span style="color: #64748B;">Client-side role simulation. Real authorization is enforced by Django backend permissions.</span>
+            </div>
+          </div>
+
+          <div class="role-switcher-controls">
+            <label for="demo-role-select" style="font-weight: 600; color: #0B1220;">Simulate Role:</label>
+            <select id="demo-role-select" class="role-select" aria-label="Select simulated user permissions role">
+              <option value="admin" selected>Sarah Jenkins (Group Administrator)</option>
+              <option value="member">David Okafor (Ordinary Circle Member)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION 1: GROUP OVERVIEW SUMMARY CARDS
+             ================================================================== -->
+        <section aria-labelledby="overview-heading">
+          <h2 id="overview-heading" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Group Overview Summary</h2>
+
+          <div class="summary-cards-grid">
+            <!-- Card 1: Groups Joined -->
+            <div class="summary-card" style="border-top: 3px solid var(--emerald);">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Groups Joined</span>
+                <div class="summary-card-icon" style="background-color: var(--emerald-surface); color: var(--emerald);" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="stat-groups-joined">2</div>
+              <div class="summary-card-meta">Active member participation</div>
+            </div>
+
+            <!-- Card 2: Groups Managed -->
+            <div class="summary-card" style="border-top: 3px solid #0284C7;">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Groups Managed</span>
+                <div class="summary-card-icon" style="background-color: #E0F2FE; color: #0284C7;" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="stat-groups-managed">1</div>
+              <div class="summary-card-meta">Administrator oversight role</div>
+            </div>
+
+            <!-- Card 3: Total Members Across Managed Groups -->
+            <div class="summary-card" style="border-top: 3px solid #111C2E;">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Total Managed Members</span>
+                <div class="summary-card-icon" style="background-color: var(--surface-subtle); color: var(--navy-primary);" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="7" r="4"></circle>
+                    <path d="M5.5 21a6.5 6.5 0 0 1 13 0"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="stat-total-managed-members">12</div>
+              <div class="summary-card-meta">Participants in your circles</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 2: GROUP LIST
+             ================================================================== -->
+        <section id="section-groups-list" aria-labelledby="groups-list-heading">
+          <div class="history-controls-bar">
+            <!-- Search -->
+            <div class="search-box">
+              <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="groups-search-input" class="search-input" placeholder="Search groups by name, description, or administrator..." aria-label="Search contribution groups">
+            </div>
+
+            <!-- Filter Dropdown -->
+            <div class="filter-group">
+              <label for="groups-filter-select" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Filter groups</label>
+              <select id="groups-filter-select" class="filter-select">
+                <option value="all">All Contribution Circles</option>
+                <option value="joined">My Joined Circles</option>
+                <option value="managed">Managed by Me</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Groups Cards Grid -->
+          <div class="groups-grid" id="groups-cards-container">
+            <!-- Rendered dynamically by js/groups.js -->
+          </div>
+
+          <!-- Empty State -->
+          <div id="groups-empty-state" class="table-empty-state" style="background-color: var(--white); border-radius: var(--radius-xl); border: 1px solid var(--border-light); margin-top: 1rem;">
+            <svg class="empty-state-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="8" y1="15" x2="16" y2="15"></line>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+            <h3 style="font-size: 1rem; color: #0B1220; margin-bottom: 0.25rem;">No matching contribution groups found</h3>
+            <p style="font-size: 0.85rem; color: #64748B;">Try clearing your search query or create a new savings circle.</p>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 4: GROUP DETAILS (INSPECTOR VIEW)
+             ================================================================== -->
+        <section class="group-details-view" id="section-group-details" aria-labelledby="dtl-group-name">
+          <!-- Back button -->
+          <div style="margin-bottom: 1.25rem;">
+            <button type="button" class="btn btn-secondary btn-sm" id="btn-back-to-groups">
+              &larr; Back to All Groups
+            </button>
+          </div>
+
+          <!-- Hero Banner for Selected Group -->
+          <div class="group-details-banner">
+            <div class="group-banner-top">
+              <div>
+                <h2 class="group-banner-title" id="dtl-group-name">Alpha Thrift Syndicate · Cycle #4</h2>
+                <p class="group-banner-desc" id="dtl-group-desc">Daily rotating savings circle for verified business owners.</p>
+                <div style="font-size: 0.825rem; color: #CBD5E1; margin-top: 0.75rem;">
+                  Circle Administrator: <strong style="color: #FFFFFF;" id="dtl-group-admin">Sarah Jenkins</strong>
+                </div>
+              </div>
+
+              <!-- Permission-Aware Action Button (Join vs Manage) -->
+              <div id="dtl-action-container">
+                <!-- Injected via js/groups.js depending on role -->
+              </div>
+            </div>
+
+            <!-- 4-Stat Strip -->
+            <div class="group-banner-stats">
+              <div class="banner-stat-item">
+                <span class="banner-stat-label">Total Pool Collected</span>
+                <span class="banner-stat-val tabular-nums" id="dtl-pool-amount">₦4,500,000.00</span>
+              </div>
+              <div class="banner-stat-item">
+                <span class="banner-stat-label">Active Members</span>
+                <span class="banner-stat-val tabular-nums" id="dtl-member-count">12 of 12</span>
+              </div>
+              <div class="banner-stat-item">
+                <span class="banner-stat-label">Cycle Progress</span>
+                <span class="banner-stat-val tabular-nums" id="dtl-progress-percent">83%</span>
+              </div>
+              <div class="banner-stat-item">
+                <span class="banner-stat-label">Operating Cycle Dates</span>
+                <span class="banner-stat-val tabular-nums" id="dtl-cycle-dates" style="font-size: 1.05rem;">Oct 01 – Oct 31, 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rules Summary & Security Note Grid -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem;">
+            <!-- Contribution Rules Card -->
+            <div class="dashboard-card">
+              <h3 class="dashboard-card-title" style="font-size: 1.1rem; margin-bottom: 1rem;">Circle Rules &amp; Cadence</h3>
+              <div class="rules-list">
+                <div class="rule-row">
+                  <span class="rule-label">Contribution Amount</span>
+                  <span class="rule-value tabular-nums" id="rule-dtl-amount">₦15,000 per daily</span>
+                </div>
+                <div class="rule-row">
+                  <span class="rule-label">Frequency Cadence</span>
+                  <span class="rule-value" id="rule-dtl-freq">Daily</span>
+                </div>
+                <div class="rule-row">
+                  <span class="rule-label">Grace Period Allowed</span>
+                  <span class="rule-value" id="rule-dtl-grace">24 Hours</span>
+                </div>
+                <div class="rule-row">
+                  <span class="rule-label">Group Operating Status</span>
+                  <span class="rule-value" id="rule-dtl-status" style="color: var(--emerald); font-weight: 700;">Active</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Administrator Authority & Permissions Notice -->
+            <div class="dashboard-card">
+              <h3 class="dashboard-card-title" style="font-size: 1.1rem; margin-bottom: 0.75rem;">Administrator Authority</h3>
+              <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 1rem;">
+                Designated circle coordinators oversee member attendance, verify submitted transfer slips against bank receipts, and enforce penalty quotas for missed deadlines.
+              </p>
+              <div class="status-distinction-banner" style="font-size: 0.775rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                <span>Ordinary members have read-only access to roster attendance and cannot approve dues or modify rules.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================================================================
+               SECTION 5: MEMBERS TABLE
+               ================================================================ -->
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div>
+                <h3 class="dashboard-card-title" style="font-size: 1.15rem;">Circle Member Roster</h3>
+                <p class="dashboard-card-subtitle">Active member list and cumulative cycle contribution compliance.</p>
+              </div>
+            </div>
+
+            <div class="history-table-container">
+              <table class="history-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Member Name</th>
+                    <th scope="col">Joined Date</th>
+                    <th scope="col">Contribution Progress</th>
+                    <th scope="col">Membership Status</th>
+                    <th scope="col">Available Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="members-table-body">
+                  <!-- Rendered dynamically by js/groups.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SECTION 3: CREATE A GROUP MODAL FORM
+       ========================================================================== -->
+  <div class="modal-overlay" id="create-group-modal" role="dialog" aria-modal="true" aria-labelledby="modal-create-title">
+    <div class="modal-card" style="max-width: 620px;">
+      <div class="modal-header-row">
+        <div class="modal-title-group">
+          <h3 id="modal-create-title">Create a New Contribution Group</h3>
+          <p>Define operating rules, contribution amounts, and member targets</p>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-create-close" aria-label="Close dialog">✕</button>
+      </div>
+
+      <form id="create-group-form" class="form-grid" novalidate>
+        <!-- Group Name -->
+        <div class="form-group">
+          <label for="new-group-name" class="form-label">
+            <span>Group Name <span class="req" aria-hidden="true">*</span></span>
+          </label>
+          <input type="text" id="new-group-name" class="form-input" placeholder="e.g. Lagos Techies Thrift Syndicate" required>
+          <span class="field-error" id="err-new-group-name" role="alert"></span>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+          <label for="new-group-desc" class="form-label">
+            <span>Description / Purpose <span class="req" aria-hidden="true">*</span></span>
+          </label>
+          <textarea id="new-group-desc" class="form-input" rows="2" placeholder="e.g. Daily contribution circle for freelance engineers pooling capital for gadgets and emergency funds." required></textarea>
+          <span class="field-error" id="err-new-group-desc" role="alert"></span>
+        </div>
+
+        <!-- Contribution Amount & Frequency Row (2 Columns) -->
+        <div class="form-row-2col">
+          <div class="form-group">
+            <label for="new-group-amount" class="form-label">
+              <span>Contribution Amount (₦) <span class="req" aria-hidden="true">*</span></span>
+            </label>
+            <div class="input-currency-wrapper">
+              <span class="currency-prefix" aria-hidden="true">₦</span>
+              <input type="number" id="new-group-amount" class="form-input tabular-nums" placeholder="10,000" min="500" step="500" required>
+            </div>
+            <span class="field-error" id="err-new-group-amount" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="new-group-freq" class="form-label">
+              <span>Frequency <span class="req" aria-hidden="true">*</span></span>
+            </label>
+            <select id="new-group-freq" class="form-input" required>
+              <option value="Daily" selected>Daily</option>
+              <option value="Weekly">Weekly</option>
+              <option value="Bi-weekly">Bi-weekly</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Cycle Dates Row (2 Columns) -->
+        <div class="form-row-2col">
+          <div class="form-group">
+            <label for="new-group-start" class="form-label">
+              <span>Cycle Start Date <span class="req" aria-hidden="true">*</span></span>
+            </label>
+            <input type="date" id="new-group-start" class="form-input" required>
+            <span class="field-error" id="err-new-group-start" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="new-group-end" class="form-label">
+              <span>Cycle End Date <span class="req" aria-hidden="true">*</span></span>
+            </label>
+            <input type="date" id="new-group-end" class="form-input" required>
+            <span class="field-error" id="err-new-group-end" role="alert"></span>
+          </div>
+        </div>
+
+        <!-- Max Members & Grace Period Row (2 Columns) -->
+        <div class="form-row-2col">
+          <div class="form-group">
+            <label for="new-group-max" class="form-label">
+              <span>Maximum Members <span class="req" aria-hidden="true">*</span></span>
+            </label>
+            <input type="number" id="new-group-max" class="form-input tabular-nums" value="12" min="2" max="100" required>
+            <span class="field-error" id="err-new-group-max" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="new-group-grace" class="form-label">
+              <span>Grace Period (Optional)</span>
+            </label>
+            <select id="new-group-grace" class="form-input">
+              <option value="None">None (Strict midnight cutoff)</option>
+              <option value="24 Hours" selected>24 Hours</option>
+              <option value="48 Hours">48 Hours</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="status-distinction-banner" style="margin-top: 0.5rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <div style="font-size: 0.8rem;">
+            By creating this group, your account is assigned as the primary Circle Administrator. In production with Django, this binds your user ID to group coordinator permissions.
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: flex-end; gap: 0.75rem; margin-top: 1rem;">
+          <button type="button" class="btn btn-secondary" id="modal-create-cancel">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="btn-submit-create-group">Create Contribution Group</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Vanilla JavaScript Controller -->
+  <script src="./js/groups.js"></script>
+</body>
+</html>

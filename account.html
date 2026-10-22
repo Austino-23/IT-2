@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications & Profile — ContriTrack</title>
+  <meta name="description" content="Manage personal profile, payout banking details, notification preferences, and system alerts on ContriTrack.">
+  
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+
+  <!-- Full App Shell -->
+  <div class="app-shell">
+
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- ======================================================================
+         SIDEBAR NAVIGATION
+         ====================================================================== -->
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Member Navigation">
+      <div>
+        <!-- Sidebar Brand Header -->
+        <div class="sidebar-header">
+          <a href="index.html" class="nav-brand" aria-label="ContriTrack Home">
+            <div class="brand-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <span>Contri<span class="brand-accent">Track</span></span>
+          </a>
+          <button type="button" class="sidebar-close-btn" id="sidebar-close" aria-label="Close navigation sidebar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Sidebar Navigation Links -->
+        <nav class="sidebar-nav" aria-label="Dashboard sections">
+          <span class="sidebar-section-title">Navigation</span>
+          <a href="dashboard.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Overview Dashboard</span>
+          </a>
+
+          <a href="contributions.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+            <span>Contributions &amp; Payments</span>
+          </a>
+
+          <a href="schedule.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Contribution Schedule</span>
+          </a>
+
+          <a href="groups.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Groups &amp; Members</span>
+          </a>
+
+          <span class="sidebar-section-title">Administration &amp; Reports</span>
+          <a href="admin-dashboard.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Admin Console</span>
+          </a>
+
+          <a href="reports.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+            <span>Reports &amp; Analytics</span>
+          </a>
+
+          <span class="sidebar-section-title">Account &amp; Settings</span>
+          <a href="account.html" class="sidebar-nav-item active" aria-current="page">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span>Notifications &amp; Profile</span>
+          </a>
+
+          <a href="index.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Landing Page</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- User Profile & Log Out Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="sidebar-user-avatar" aria-hidden="true">MV</div>
+          <div class="sidebar-user-meta">
+            <span class="sidebar-user-name">Marcus Vance</span>
+            <span class="sidebar-user-role">Active Member</span>
+          </div>
+        </div>
+        <a href="auth.html?mode=login" class="sidebar-logout-btn" title="Sign out" aria-label="Sign out">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN APPLICATION CONTENT AREA
+         ====================================================================== -->
+    <div class="app-main">
+      
+      <!-- Top Application Header -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle navigation menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="topbar-headings">
+            <h1>Notifications &amp; Profile</h1>
+            <p>Manage your personal profile, notification preferences, security settings, and view system alerts.</p>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <a href="dashboard.html" class="btn btn-outline btn-sm">Member Dashboard</a>
+          <a href="admin-dashboard.html" class="btn btn-secondary btn-sm">Admin View</a>
+          <div class="topbar-user-pill">
+            <div class="topbar-user-avatar">MV</div>
+            <span class="topbar-user-name">Marcus Vance</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Dashboard Content -->
+      <main class="dashboard-content">
+
+        <!-- Top Account Navigation Tabs -->
+        <div style="display: flex; gap: 0.5rem; border-bottom: 2px solid #E2E8F0; padding-bottom: 0.5rem; overflow-x: auto;" role="tablist" aria-label="Account Tabs">
+          <button type="button" class="btn btn-sm btn-primary tab-trigger" data-tab="tab-profile" role="tab" aria-selected="true" id="tab-btn-profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.35rem;" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Profile &amp; Bank Details
+          </button>
+          <button type="button" class="btn btn-sm btn-secondary tab-trigger" data-tab="tab-notifications" role="tab" aria-selected="false" id="tab-btn-notifications">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.35rem;" aria-hidden="true">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            System Alerts &amp; Feed
+            <span style="background: #10B981; color: #FFF; padding: 0.1rem 0.4rem; border-radius: 999px; font-size: 0.65rem; margin-left: 0.35rem;">2</span>
+          </button>
+          <button type="button" class="btn btn-sm btn-secondary tab-trigger" data-tab="tab-preferences" role="tab" aria-selected="false" id="tab-btn-preferences">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.35rem;" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+            Preferences
+          </button>
+          <button type="button" class="btn btn-sm btn-secondary tab-trigger" data-tab="tab-security" role="tab" aria-selected="false" id="tab-btn-security">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.35rem;" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            Security &amp; Login
+          </button>
+        </div>
+
+        <!-- ==================================================================
+             TAB 1: PERSONAL PROFILE & BANKING DETAILS
+             ================================================================== -->
+        <section id="tab-profile" class="tab-pane active" aria-labelledby="tab-btn-profile">
+          <div class="contribution-split-grid">
+            
+            <!-- Profile Form -->
+            <div class="dashboard-card">
+              <div class="dashboard-card-header">
+                <div>
+                  <h2 class="dashboard-card-title">Member Profile Information</h2>
+                  <p class="dashboard-card-subtitle">Keep your contact and identification details up to date.</p>
+                </div>
+                <span class="badge badge-verified">ID Verified</span>
+              </div>
+
+              <form id="form-profile" class="form-grid">
+                
+                <!-- Avatar preview row -->
+                <div style="display: flex; align-items: center; gap: 1.25rem; padding-bottom: 0.5rem;">
+                  <div style="width: 64px; height: 64px; border-radius: 50%; background: #0B1220; color: #10B981; display: flex; align-items: center; justify-content: center; font-size: 1.45rem; font-weight: 800; border: 2px solid #10B981;">
+                    MV
+                  </div>
+                  <div>
+                    <h4 style="font-size: 0.95rem; font-weight: 700; color: #0B1220; margin-bottom: 0.15rem;">Marcus Vance</h4>
+                    <span style="font-size: 0.775rem; color: #64748B;">Member since January 2026 · Tier 1 Contributor</span>
+                  </div>
+                </div>
+
+                <div class="form-row-2col">
+                  <div class="form-group">
+                    <label for="prof-firstname" class="form-label">First Name</label>
+                    <input type="text" id="prof-firstname" class="form-input" value="Marcus" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="prof-lastname" class="form-label">Last Name</label>
+                    <input type="text" id="prof-lastname" class="form-input" value="Vance" required>
+                  </div>
+                </div>
+
+                <div class="form-row-2col">
+                  <div class="form-group">
+                    <label for="prof-email" class="form-label">Email Address</label>
+                    <input type="email" id="prof-email" class="form-input" value="marcus.vance@example.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="prof-phone" class="form-label">Phone Number (SMS Alert Target)</label>
+                    <input type="tel" id="prof-phone" class="form-input" value="+234 803 123 4567" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="prof-address" class="form-label">Residential Address</label>
+                  <input type="text" id="prof-address" class="form-input" value="14 Admiralty Way, Lekki Phase 1, Lagos, Nigeria">
+                </div>
+
+                <div style="margin-top: 0.5rem;">
+                  <button type="submit" class="btn btn-primary" id="btn-save-profile">
+                    Save Profile Changes
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Payout Bank Account Details Panel -->
+            <div class="dashboard-card" style="border-top: 4px solid #10B981;">
+              <div class="dashboard-card-header">
+                <div>
+                  <h2 class="dashboard-card-title">Disbursement &amp; Payout Bank</h2>
+                  <p class="dashboard-card-subtitle">Where your rotating Esusu lump-sum payouts are deposited.</p>
+                </div>
+                <div style="width: 32px; height: 32px; border-radius: 8px; background: #ECFDF5; color: #10B981; display: flex; align-items: center; justify-content: center;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                  </svg>
+                </div>
+              </div>
+
+              <form id="form-bank-details" class="form-grid">
+                <div class="form-group">
+                  <label for="bank-name" class="form-label">Settlement Bank</label>
+                  <select id="bank-name" class="form-select">
+                    <option value="first-bank" selected>First Bank of Nigeria (FBN)</option>
+                    <option value="gtbank">Guaranty Trust Bank (GTBank)</option>
+                    <option value="access">Access Bank Plc</option>
+                    <option value="zenith">Zenith Bank Plc</option>
+                    <option value="uba">United Bank for Africa (UBA)</option>
+                    <option value="kuda">Kuda Microfinance Bank</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="bank-acc-num" class="form-label">NUBAN Account Number</label>
+                  <input type="text" id="bank-acc-num" class="form-input tabular-nums" value="0123456789" maxlength="10">
+                </div>
+
+                <div class="form-group">
+                  <label for="bank-acc-name" class="form-label">Account Name (Auto-resolved)</label>
+                  <input type="text" id="bank-acc-name" class="form-input" value="MARCUS VANCE" readonly style="background-color: #F8FAFC; color: #065F46; font-weight: 700;">
+                </div>
+
+                <div style="background-color: #ECFDF5; border: 1px solid #A7F3D0; border-radius: 8px; padding: 0.85rem; font-size: 0.775rem; color: #065F46;">
+                  <strong>✓ BVN Linked &amp; Name Matched</strong>
+                  <p style="margin-top: 0.2rem; line-height: 1.35;">Payout funds are automatically cleared by the circle administrator to this verified destination account.</p>
+                </div>
+
+                <button type="submit" class="btn btn-secondary" id="btn-save-bank">
+                  Update Settlement Account
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             TAB 2: SYSTEM ALERTS & FEED
+             ================================================================== -->
+        <section id="tab-notifications" class="tab-pane" style="display: none;" aria-labelledby="tab-btn-notifications">
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div>
+                <h2 class="dashboard-card-title">System Notifications &amp; Activity Log</h2>
+                <p class="dashboard-card-subtitle">Real-time alerts, payment verifications, and upcoming payout announcements.</p>
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <button type="button" class="btn btn-secondary btn-sm" id="btn-mark-all-read">
+                  Mark All as Read
+                </button>
+              </div>
+            </div>
+
+            <!-- Feed Filter Pills -->
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem;">
+              <button type="button" class="btn btn-sm btn-outline notif-filter-btn active" data-filter="all">All (4)</button>
+              <button type="button" class="btn btn-sm btn-outline notif-filter-btn" data-filter="unread">Unread (2)</button>
+              <button type="button" class="btn btn-sm btn-outline notif-filter-btn" data-filter="payments">Payments</button>
+              <button type="button" class="btn btn-sm btn-outline notif-filter-btn" data-filter="payouts">Payouts</button>
+            </div>
+
+            <!-- Notification Items List -->
+            <div id="notifications-feed-container">
+              <!-- Item 1 (Unread Payment) -->
+              <div class="notification-item-card unread" data-category="payments">
+                <div class="notification-item-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div class="notification-item-text" style="flex-grow: 1;">
+                  <h6>Daily Contribution Verified: ₦5,000.00</h6>
+                  <p>Your deposit for Lagos Techies Thrift Club (Ref: PAY-LT-90241) was approved and recorded by Coordinator Sarah Jenkins.</p>
+                  <span>Today, 10:24 AM · Ledger ID #TXN-90241</span>
+                </div>
+                <button type="button" class="btn-dismiss-notif" style="background: none; border: none; color: #94A3B8; cursor: pointer; padding: 0.25rem;" title="Dismiss alert">✕</button>
+              </div>
+
+              <!-- Item 2 (Unread Payout) -->
+              <div class="notification-item-card unread" data-category="payouts">
+                <div class="notification-item-icon info">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </div>
+                <div class="notification-item-text" style="flex-grow: 1;">
+                  <h6>Payout Rotation Approaching: ₦60,000.00</h6>
+                  <p>You are scheduled as Recipient #4 in Lagos Techies Thrift Club. Disbursement is scheduled for Thursday, Nov 05, 2026.</p>
+                  <span>Yesterday, 4:15 PM · Payouts Department</span>
+                </div>
+                <button type="button" class="btn-dismiss-notif" style="background: none; border: none; color: #94A3B8; cursor: pointer; padding: 0.25rem;" title="Dismiss alert">✕</button>
+              </div>
+
+              <!-- Item 3 (Read Payment Reminder) -->
+              <div class="notification-item-card" data-category="payments">
+                <div class="notification-item-icon warning">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                </div>
+                <div class="notification-item-text" style="flex-grow: 1;">
+                  <h6>Contribution Window Opening</h6>
+                  <p>Tomorrow's contribution deadline for Family Daily Payout Club (₦2,500.00) opens at 07:00 AM.</p>
+                  <span>2 days ago · Automated System Reminder</span>
+                </div>
+                <button type="button" class="btn-dismiss-notif" style="background: none; border: none; color: #94A3B8; cursor: pointer; padding: 0.25rem;" title="Dismiss alert">✕</button>
+              </div>
+
+              <!-- Item 4 (Read Group Update) -->
+              <div class="notification-item-card" data-category="groups">
+                <div class="notification-item-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="notification-item-text" style="flex-grow: 1;">
+                  <h6>New Circle Member Added</h6>
+                  <p>Adebayo Adeleke joined Lagos Techies Thrift Club. The group is now at 12/15 capacity.</p>
+                  <span>3 days ago · Group Admin Notice</span>
+                </div>
+                <button type="button" class="btn-dismiss-notif" style="background: none; border: none; color: #94A3B8; cursor: pointer; padding: 0.25rem;" title="Dismiss alert">✕</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             TAB 3: NOTIFICATION PREFERENCES
+             ================================================================== -->
+        <section id="tab-preferences" class="tab-pane" style="display: none;" aria-labelledby="tab-btn-preferences">
+          <div class="dashboard-card">
+            <div class="dashboard-card-header">
+              <div>
+                <h2 class="dashboard-card-title">Delivery Channels &amp; Reminders</h2>
+                <p class="dashboard-card-subtitle">Choose how and when ContriTrack delivers your daily contribution reminders.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+              
+              <!-- Preference 1 -->
+              <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1.25rem; border-bottom: 1px solid #E2E8F0;">
+                <div>
+                  <h4 style="font-size: 0.95rem; font-weight: 700; color: #0B1220;">Daily SMS Contribution Reminders</h4>
+                  <p style="font-size: 0.8rem; color: #64748B;">Receive a morning SMS text message with your daily due amount and bank deposit reference.</p>
+                </div>
+                <label style="position: relative; display: inline-block; width: 44px; height: 24px; cursor: pointer;">
+                  <input type="checkbox" checked id="pref-sms" style="opacity: 0; width: 0; height: 0;">
+                  <span class="custom-switch-slider"></span>
+                </label>
+              </div>
+
+              <!-- Preference 2 -->
+              <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1.25rem; border-bottom: 1px solid #E2E8F0;">
+                <div>
+                  <h4 style="font-size: 0.95rem; font-weight: 700; color: #0B1220;">Email Receipts &amp; PDF Audit Summaries</h4>
+                  <p style="font-size: 0.8rem; color: #64748B;">Instant email notification when an administrator verifies or updates a contribution submission.</p>
+                </div>
+                <label style="position: relative; display: inline-block; width: 44px; height: 24px; cursor: pointer;">
+                  <input type="checkbox" checked id="pref-email" style="opacity: 0; width: 0; height: 0;">
+                  <span class="custom-switch-slider"></span>
+                </label>
+              </div>
+
+              <!-- Preference 3 -->
+              <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1.25rem; border-bottom: 1px solid #E2E8F0;">
+                <div>
+                  <h4 style="font-size: 0.95rem; font-weight: 700; color: #0B1220;">Payout Turn Countdown Alerts</h4>
+                  <p style="font-size: 0.8rem; color: #64748B;">Get notified 7 days, 3 days, and 24 hours prior to your scheduled lump-sum cycle payout.</p>
+                </div>
+                <label style="position: relative; display: inline-block; width: 44px; height: 24px; cursor: pointer;">
+                  <input type="checkbox" checked id="pref-payouts" style="opacity: 0; width: 0; height: 0;">
+                  <span class="custom-switch-slider"></span>
+                </label>
+              </div>
+
+              <!-- Preference 4 -->
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <h4 style="font-size: 0.95rem; font-weight: 700; color: #0B1220;">Urgent Grace Period Expiry Warnings</h4>
+                  <p style="font-size: 0.8rem; color: #64748B;">Direct notifications if a contribution deadline passes and enters the 2-day grace window.</p>
+                </div>
+                <label style="position: relative; display: inline-block; width: 44px; height: 24px; cursor: pointer;">
+                  <input type="checkbox" checked id="pref-grace" style="opacity: 0; width: 0; height: 0;">
+                  <span class="custom-switch-slider"></span>
+                </label>
+              </div>
+
+            </div>
+
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #E2E8F0;">
+              <button type="button" class="btn btn-primary btn-sm" id="btn-save-preferences">
+                Save Preferences
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             TAB 4: SECURITY & LOGIN
+             ================================================================== -->
+        <section id="tab-security" class="tab-pane" style="display: none;" aria-labelledby="tab-btn-security">
+          <div class="contribution-split-grid">
+            
+            <!-- Password Form -->
+            <div class="dashboard-card">
+              <div class="dashboard-card-header">
+                <div>
+                  <h2 class="dashboard-card-title">Change Account Password</h2>
+                  <p class="dashboard-card-subtitle">Ensure your account uses a strong, unique password.</p>
+                </div>
+              </div>
+
+              <form id="form-change-password" class="form-grid">
+                <div class="form-group">
+                  <label for="pwd-current" class="form-label">Current Password</label>
+                  <input type="password" id="pwd-current" class="form-input" required placeholder="••••••••••••">
+                </div>
+
+                <div class="form-group">
+                  <label for="pwd-new" class="form-label">New Password (8+ characters)</label>
+                  <input type="password" id="pwd-new" class="form-input" required minlength="8" placeholder="••••••••••••">
+                </div>
+
+                <div class="form-group">
+                  <label for="pwd-confirm" class="form-label">Confirm New Password</label>
+                  <input type="password" id="pwd-confirm" class="form-input" required minlength="8" placeholder="••••••••••••">
+                </div>
+
+                <div style="margin-top: 0.5rem;">
+                  <button type="submit" class="btn btn-primary" id="btn-update-pwd">
+                    Update Password
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Active Sessions & Perspective Switcher -->
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+              
+              <!-- Perspective Switcher Card -->
+              <div class="dashboard-card" style="background: linear-gradient(135deg, #0B1220 0%, #111C2E 100%); color: #FFF;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                  <h3 style="color: #FFF; font-size: 1rem; font-weight: 700;">Demo Role Switcher</h3>
+                  <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #A7F3D0; border: 1px solid rgba(16, 185, 129, 0.4);">Prototyping</span>
+                </div>
+                <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 1rem; line-height: 1.45;">
+                  Experience both member saving habits and administrator group management workflows.
+                </p>
+                <div style="display: flex; gap: 0.5rem;">
+                  <a href="dashboard.html" class="btn btn-primary btn-sm" style="flex: 1; justify-content: center;">Member View</a>
+                  <a href="admin-dashboard.html" class="btn btn-outline btn-sm" style="flex: 1; justify-content: center; color: #FFF; border-color: rgba(255,255,255,0.3);">Admin View</a>
+                </div>
+              </div>
+
+              <!-- Active Sessions -->
+              <div class="dashboard-card">
+                <div class="dashboard-card-header">
+                  <div>
+                    <h3 class="dashboard-card-title" style="font-size: 1rem;">Active Devices &amp; Sessions</h3>
+                    <p class="dashboard-card-subtitle">Devices currently authorized with your session token.</p>
+                  </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.8rem;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid #E2E8F0;">
+                    <div>
+                      <div style="font-weight: 700; color: #0B1220;">Chrome 124 on macOS (Current)</div>
+                      <div style="color: #64748B; font-size: 0.725rem;">Lagos, Nigeria · Active Now</div>
+                    </div>
+                    <span class="badge badge-verified">Current</span>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0;">
+                    <div>
+                      <div style="font-weight: 700; color: #0B1220;">Mobile Safari on iPhone 15</div>
+                      <div style="color: #64748B; font-size: 0.725rem;">Lagos, Nigeria · 4 hours ago</div>
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-sm btn-revoke-session" style="padding: 0.2rem 0.5rem; font-size: 0.725rem;">
+                      Revoke
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       TOAST CONTAINER
+       ========================================================================== -->
+  <div class="admin-toast-container" id="admin-toast-container" aria-live="polite"></div>
+
+  <!-- Vanilla JavaScript Controller -->
+  <script src="./js/account.js"></script>
+</body>
+</html>

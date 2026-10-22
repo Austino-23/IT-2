@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrator Overview — ContriTrack</title>
+  <meta name="description" content="Administrative control console for monitoring collections, verifying member payments, and managing circle health.">
+
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+
+  <!-- Full App Shell -->
+  <div class="app-shell">
+
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- ======================================================================
+         ADMINISTRATOR SIDEBAR
+         ====================================================================== -->
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Administrator Navigation">
+      <div>
+        <!-- Sidebar Brand Header -->
+        <div class="sidebar-header">
+          <a href="index.html" class="nav-brand" aria-label="ContriTrack Home">
+            <div class="brand-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <span>Contri<span class="brand-accent">Track</span></span>
+          </a>
+          <button type="button" class="sidebar-close-btn" id="sidebar-close" aria-label="Close navigation sidebar">✕</button>
+        </div>
+
+        <!-- Sidebar Navigation Links -->
+        <nav class="sidebar-nav" aria-label="Admin Navigation Sections">
+          <span class="sidebar-section-title">Administration</span>
+          <a href="admin-dashboard.html" class="sidebar-nav-item active" aria-current="page">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Overview</span>
+          </a>
+
+          <a href="groups.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Groups &amp; Members</span>
+          </a>
+
+          <a href="verify-payments.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>Payment Verification</span>
+          </a>
+
+          <a href="reports.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+            <span>Reports &amp; Analytics</span>
+          </a>
+
+          <span class="sidebar-section-title">System &amp; Settings</span>
+          <a href="account.html" class="sidebar-nav-item" id="sidebar-notifications-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span>Notifications &amp; Profile</span>
+          </a>
+
+          <a href="dashboard.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+            <span>Member View Portal</span>
+          </a>
+
+          <a href="index.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Landing Page</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- User Profile & Log Out Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="sidebar-user-avatar" style="border-color: #10B981;" aria-hidden="true">SJ</div>
+          <div class="sidebar-user-meta">
+            <span class="sidebar-user-name">Sarah Jenkins</span>
+            <span class="sidebar-user-role" style="color: #10B981; font-weight: 700;">Super Administrator</span>
+          </div>
+        </div>
+        <a href="auth.html?mode=login" class="sidebar-logout-btn" title="Sign out" aria-label="Sign out">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN APPLICATION AREA
+         ====================================================================== -->
+    <div class="app-main">
+      
+      <!-- Top Application Header -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle navigation menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="topbar-headings">
+            <h1>Administrator Overview</h1>
+            <p>Monitor collection trends, reconcile pending payments, and oversee circle health.</p>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <button type="button" class="topbar-notification-btn" id="topbar-notifications-btn" aria-label="View system alerts">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notification-dot" aria-hidden="true"></span>
+          </button>
+
+          <div style="display: flex; align-items: center; gap: 0.65rem;">
+            <div class="sidebar-user-avatar" style="width: 32px; height: 32px; font-size: 0.75rem;" aria-hidden="true">SJ</div>
+            <span style="font-size: 0.85rem; font-weight: 700; color: #0B1220;">Sarah Jenkins</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content Container -->
+      <main class="dashboard-content">
+
+        <!-- Financial Accuracy & Security Disclosure Banner -->
+        <div class="status-distinction-banner" style="background-color: var(--white); border-color: var(--border-light);">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--emerald);" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <div style="font-size: 0.8rem; line-height: 1.45;">
+            <strong>Financial Accuracy &amp; Permissions Notice:</strong> Expected collections reflect scheduled cycle targets. <strong>Only verified payments</strong> are counted as confirmed collections. Unverified submissions remain in the pending review queue and are <strong>NOT presented as money received</strong>. Real administrator privileges are verified server-side via Django RBAC.
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION 6: QUICK ACTIONS (TOP PROMINENT HERO CARDS)
+             ================================================================== -->
+        <section aria-labelledby="quick-actions-heading">
+          <h2 id="quick-actions-heading" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Administrative Quick Actions</h2>
+
+          <div class="quick-actions-grid">
+            <!-- Action 1: Manage Groups -->
+            <a href="groups.html" class="quick-action-card">
+              <div class="quick-action-info">
+                <h4>Manage Circles</h4>
+                <p>Configure contribution cycles and member targets</p>
+              </div>
+              <div class="quick-action-icon action-manage-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Action 2: Review Payments -->
+            <a href="verify-payments.html" class="quick-action-card">
+              <div class="quick-action-info">
+                <h4>Review Payments</h4>
+                <p>Reconcile 8 pending bank transfer slips</p>
+              </div>
+              <div class="quick-action-icon action-verify-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+            </a>
+
+            <!-- Action 3: View Reports -->
+            <a href="reports.html" class="quick-action-card">
+              <div class="quick-action-info">
+                <h4>View Reports</h4>
+                <p>Export audit statements and compliance CSVs</p>
+              </div>
+              <div class="quick-action-icon action-reports-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                  <polyline points="17 6 23 6 23 12"></polyline>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 1: SUMMARY CARDS
+             ================================================================== -->
+        <section aria-labelledby="admin-summary-heading">
+          <h2 id="admin-summary-heading" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Collections Summary</h2>
+
+          <div class="summary-cards-grid-4">
+            <!-- Card 1: Total Verified Collections -->
+            <div class="summary-card card-verified">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Total Verified Collections</span>
+                <div class="summary-card-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="adm-sum-verified">₦8,340,000.00</div>
+              <div class="summary-card-meta">Confirmed in escrow accounts</div>
+            </div>
+
+            <!-- Card 2: Expected Contributions -->
+            <div class="summary-card" style="border-top: 3px solid #111C2E;">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Expected Contributions</span>
+                <div class="summary-card-icon" style="background-color: var(--surface-subtle); color: var(--navy-primary);" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="adm-sum-expected">₦10,500,000.00</div>
+              <div class="summary-card-meta">Active cycle targets across circles</div>
+            </div>
+
+            <!-- Card 3: Pending Payments -->
+            <div class="summary-card card-pending">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Pending Payments</span>
+                <div class="summary-card-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="adm-sum-pending">₦175,000.00</div>
+              <div class="summary-card-meta">8 unverified slips awaiting audit</div>
+            </div>
+
+            <!-- Card 4: Active Members -->
+            <div class="summary-card" style="border-top: 3px solid #0284C7;">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Active Members</span>
+                <div class="summary-card-icon" style="background-color: #E0F2FE; color: #0284C7;" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="7" r="4"></circle>
+                    <path d="M5.5 21a6.5 6.5 0 0 1 13 0"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="adm-sum-members">24</div>
+              <div class="summary-card-meta">Enrolled across 3 active circles</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 2: COLLECTION TRENDS (VANILLA JS SVG CHART)
+             ================================================================== -->
+        <section class="chart-container-card" aria-labelledby="chart-heading">
+          <div class="chart-header-row">
+            <div>
+              <h2 class="dashboard-card-title" id="chart-heading">Collection Trends &amp; Velocity</h2>
+              <p class="dashboard-card-subtitle">Verified daily deposits versus monthly cumulative savings inflow</p>
+            </div>
+
+            <!-- Segmented Controls: Daily vs Monthly -->
+            <div class="chart-segmented-controls" role="tablist" aria-label="Chart time window">
+              <button type="button" class="chart-tab-btn active" id="chart-tab-daily" role="tab" aria-selected="true">
+                Daily (Last 14 Days)
+              </button>
+              <button type="button" class="chart-tab-btn" id="chart-tab-monthly" role="tab" aria-selected="false">
+                Monthly (2026 Trend)
+              </button>
+            </div>
+          </div>
+
+          <!-- SVG Chart Container with dynamic Tooltip -->
+          <div class="chart-svg-wrapper" id="chart-svg-container">
+            <!-- Dynamically populated via js/admin.js -->
+            <div class="chart-tooltip" id="chart-tooltip"></div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             TWO-COLUMN SPLIT: GROUP PERFORMANCE & MEMBERS REQUIRING ATTENTION
+             ================================================================== -->
+        <div class="admin-split-grid">
+          
+          <!-- SECTION 4: GROUP PERFORMANCE -->
+          <section class="dashboard-card" aria-labelledby="perf-heading">
+            <div class="dashboard-card-header">
+              <div>
+                <h3 class="dashboard-card-title" id="perf-heading" style="font-size: 1.15rem;">Circle Performance &amp; Outstanding Dues</h3>
+                <p class="dashboard-card-subtitle">Collection ratios and target fulfillment per active circle</p>
+              </div>
+            </div>
+
+            <div class="history-table-container">
+              <table class="history-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Circle Group</th>
+                    <th scope="col">Expected</th>
+                    <th scope="col">Verified</th>
+                    <th scope="col">Outstanding</th>
+                    <th scope="col">Progress</th>
+                  </tr>
+                </thead>
+                <tbody id="adm-group-perf-body">
+                  <!-- Rendered dynamically by js/admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- SECTION 5: MEMBERS REQUIRING ATTENTION -->
+          <section class="dashboard-card" aria-labelledby="attention-heading">
+            <div class="dashboard-card-header">
+              <div>
+                <h3 class="dashboard-card-title" id="attention-heading" style="font-size: 1.15rem;">Members Requiring Attention</h3>
+                <p class="dashboard-card-subtitle">Overdue contribution deadlines &amp; flagged transfer slips</p>
+              </div>
+            </div>
+
+            <div class="attention-list" id="adm-attention-list">
+              <!-- Rendered dynamically by js/admin.js -->
+            </div>
+          </section>
+
+        </div>
+
+        <!-- ==================================================================
+             SECTION 3: RECENT PAYMENTS FOR REVIEW
+             ================================================================== -->
+        <section class="dashboard-card" aria-labelledby="recent-payments-heading">
+          <div class="dashboard-card-header">
+            <div>
+              <h2 class="dashboard-card-title" id="recent-payments-heading">Recent Payments &amp; Slips Queue</h2>
+              <p class="dashboard-card-subtitle">Review incoming transfers, verify slips, or flag discrepancy records</p>
+            </div>
+
+            <div class="filter-group">
+              <label for="adm-payments-filter" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Filter payments</label>
+              <select id="adm-payments-filter" class="filter-select">
+                <option value="all">All Submissions</option>
+                <option value="pending" selected>Pending Review Only</option>
+                <option value="verified">Verified Only</option>
+                <option value="rejected">Rejected Only</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="history-table-container">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th scope="col">Member &amp; Reference</th>
+                  <th scope="col">Group</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Submitted At</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Review Action</th>
+                </tr>
+              </thead>
+              <tbody id="adm-payments-table-body">
+                <!-- Rendered dynamically by js/admin.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="history-table-footer">
+            <span>Showing recent submissions</span>
+            <a href="verify-payments.html" class="btn btn-secondary btn-sm">
+              Open Full Verification Desk &rarr;
+            </a>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       NOTIFICATIONS & PROFILE MODAL
+       ====================================================================== -->
+  <div class="modal-overlay" id="admin-notifications-modal" role="dialog" aria-modal="true" aria-labelledby="notif-modal-title">
+    <div class="modal-card">
+      <div class="modal-header-row">
+        <div class="modal-title-group">
+          <h3 id="notif-modal-title">Notifications &amp; Profile</h3>
+          <p>System alerts, security events, and administrative credentials</p>
+        </div>
+        <button type="button" class="btn-modal-close" id="admin-notif-modal-close" aria-label="Close notification panel">✕</button>
+      </div>
+
+      <!-- Administrator Profile Snapshot -->
+      <div style="background-color: #FAFBFD; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 1rem 1.15rem; margin-bottom: 1.25rem; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 0.85rem;">
+          <div class="sidebar-user-avatar" style="width: 44px; height: 44px; font-size: 1rem; border-color: var(--emerald);" aria-hidden="true">SJ</div>
+          <div>
+            <div style="font-size: 0.95rem; font-weight: 800; color: var(--navy-primary);">Sarah Jenkins</div>
+            <div style="font-size: 0.775rem; color: var(--emerald); font-weight: 700;">Super Administrator · Level 3 Signatory</div>
+            <div style="font-size: 0.725rem; color: var(--text-muted); font-family: monospace;">sarah.jenkins@contritrack.internal</div>
+          </div>
+        </div>
+        <span class="badge-status status-verified" style="font-size: 0.7rem;">Active Session</span>
+      </div>
+
+      <!-- System Alerts Header -->
+      <h4 style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.65rem;">
+        Pending System Alerts (3)
+      </h4>
+
+      <div class="notifications-list">
+        <div class="notification-item-card unread">
+          <div class="notification-item-icon warning" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <div class="notification-item-text">
+            <h6>8 Pending Payments Awaiting Review</h6>
+            <p>Recent bank transfer slips from Amara Chen, David Okafor, and Marcus Vance require audit reconciliation.</p>
+            <span>Today at 09:42 AM</span>
+          </div>
+        </div>
+
+        <div class="notification-item-card unread">
+          <div class="notification-item-icon warning" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+              <line x1="12" y1="9" x2="12" y2="13"></line>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </div>
+          <div class="notification-item-text">
+            <h6>Overdue Dues Flagged: Tariq Al-Mansoor</h6>
+            <p>Member has missed 3 consecutive scheduled contribution cycles in Alpha Thrift Syndicate.</p>
+            <span>Yesterday at 04:30 PM</span>
+          </div>
+        </div>
+
+        <div class="notification-item-card">
+          <div class="notification-item-icon info" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+          </div>
+          <div class="notification-item-text">
+            <h6>Cycle Payout Rotation Scheduled</h6>
+            <p>Elena Rostova is next in sequence for payout allocation on Oct 25, 2026 (₦1,800,000.00 target).</p>
+            <span>Oct 18, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="account.html" class="btn btn-secondary btn-sm">
+          Full Profile &amp; Alerts &rarr;
+        </a>
+        <a href="verify-payments.html" class="btn btn-primary btn-sm">
+          Go to Verification Desk &rarr;
+        </a>
+        <button type="button" class="btn btn-secondary btn-sm" id="admin-notif-modal-dismiss">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="admin-toast-container" class="admin-toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Vanilla JavaScript Controller -->
+  <script src="./js/admin.js"></script>
+</body>
+</html>

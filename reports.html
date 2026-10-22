@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports &amp; Analytics — ContriTrack Admin</title>
+  <meta name="description" content="Analyze contribution activity, monitor collections, and export verified financial reports.">
+
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+
+  <!-- Full App Shell -->
+  <div class="app-shell">
+
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- ======================================================================
+         ADMINISTRATOR SIDEBAR
+         ====================================================================== -->
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Administrator Navigation">
+      <div>
+        <div class="sidebar-header">
+          <a href="index.html" class="nav-brand" aria-label="ContriTrack Home">
+            <div class="brand-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <span>Contri<span class="brand-accent">Track</span></span>
+          </a>
+          <button type="button" class="sidebar-close-btn" id="sidebar-close" aria-label="Close navigation sidebar">✕</button>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Admin Navigation Sections">
+          <span class="sidebar-section-title">Administration</span>
+          <a href="admin-dashboard.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Overview</span>
+          </a>
+
+          <a href="groups.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Groups &amp; Members</span>
+          </a>
+
+          <a href="verify-payments.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>Payment Verification</span>
+          </a>
+
+          <a href="reports.html" class="sidebar-nav-item active" aria-current="page">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+            <span>Reports &amp; Analytics</span>
+          </a>
+
+          <span class="sidebar-section-title">System</span>
+          <a href="account.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span>Notifications &amp; Profile</span>
+          </a>
+
+          <a href="dashboard.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+            <span>Member View Portal</span>
+          </a>
+
+          <a href="index.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Landing Page</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="sidebar-user-avatar" style="border-color: #10B981;" aria-hidden="true">SJ</div>
+          <div class="sidebar-user-meta">
+            <span class="sidebar-user-name">Sarah Jenkins</span>
+            <span class="sidebar-user-role" style="color: #10B981; font-weight: 700;">Super Administrator</span>
+          </div>
+        </div>
+        <a href="auth.html?mode=login" class="sidebar-logout-btn" title="Sign out" aria-label="Sign out">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN CONTENT AREA
+         ====================================================================== -->
+    <div class="app-main">
+
+      <!-- Print-Only Executive Header -->
+      <header class="print-only-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div>
+            <h1 style="font-size: 1.5rem; font-weight: 800; color: #000; margin-bottom: 0.25rem;">ContriTrack Financial Audit &amp; Collections Report</h1>
+            <p style="font-size: 0.85rem; color: #444;">Official circle reconciliation ledger and compliance statement.</p>
+          </div>
+          <div style="text-align: right; font-size: 0.8rem; color: #444;">
+            <div><strong>Auditor:</strong> Sarah Jenkins (Super Admin)</div>
+            <div><strong>Export Date:</strong> October 20, 2026</div>
+            <div><strong>Escrow Status:</strong> Level 3 Confirmed</div>
+          </div>
+        </div>
+      </header>
+      
+      <!-- Topbar Navigation -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle navigation menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="topbar-headings">
+            <h1>Reports &amp; Analytics</h1>
+            <p>Analyze contribution activity, monitor collections, and export financial reports.</p>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <a href="admin-dashboard.html" class="btn btn-secondary btn-sm">&larr; Back to Admin Overview</a>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+
+        <!-- Financial Accuracy Notice -->
+        <div class="status-distinction-banner">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--emerald);" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <div style="font-size: 0.8rem; line-height: 1.45;">
+            <strong>Financial Accuracy Disclosure:</strong> Only verified payments count toward actual collections. Expected contributions are derived from scheduled cycle timetables. Outstanding balances reflect scheduled dues net of verified receipts and applicable grace periods.
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION 1: REPORT FILTERS
+             ================================================================== -->
+        <section class="reports-filter-card" aria-labelledby="filter-section-title">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+            <div>
+              <h2 id="filter-section-title" style="font-size: 1.05rem; font-weight: 800; color: var(--navy-primary);">
+                Filter &amp; Configure Report Parameters
+              </h2>
+              <p style="font-size: 0.775rem; color: var(--text-muted); margin-top: 0.15rem;">
+                Set query dates, circle scopes, and payment statuses to dynamically recompute all metrics and charts.
+              </p>
+            </div>
+          </div>
+
+          <form id="reports-filter-form" class="reports-filter-grid" onsubmit="return false;">
+            <!-- Start Date -->
+            <div class="filter-item">
+              <label for="filter-start-date">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>Start Date</span>
+              </label>
+              <input type="date" id="filter-start-date" class="form-input" required>
+            </div>
+
+            <!-- End Date -->
+            <div class="filter-item">
+              <label for="filter-end-date">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>End Date</span>
+              </label>
+              <input type="date" id="filter-end-date" class="form-input" required>
+            </div>
+
+            <!-- Group Selector -->
+            <div class="filter-item">
+              <label for="filter-group">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                </svg>
+                <span>Contribution Group</span>
+              </label>
+              <select id="filter-group" class="form-input">
+                <option value="all">All Contribution Circles</option>
+                <option value="Alpha Thrift Syndicate · Cycle #4">Alpha Thrift Syndicate · Cycle #4</option>
+                <option value="Family Home Builder Fund">Family Home Builder Fund</option>
+                <option value="Weekly Tech Syndicate">Weekly Tech Syndicate</option>
+              </select>
+            </div>
+
+            <!-- Payment Status Selector -->
+            <div class="filter-item">
+              <label for="filter-status">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Payment Status</span>
+              </label>
+              <select id="filter-status" class="form-input">
+                <option value="all">All Payment Statuses</option>
+                <option value="verified">Verified Receipts Only</option>
+                <option value="pending">Pending Review Only</option>
+                <option value="rejected">Rejected / Overdue Only</option>
+              </select>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-actions">
+              <button type="button" class="btn btn-primary" id="btn-generate-report">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span>Generate Report</span>
+              </button>
+              <button type="button" class="btn btn-secondary" id="btn-reset-filters" title="Reset all filters to default bounds">
+                Reset
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 2: SUMMARY CARDS
+             ================================================================== -->
+        <section aria-labelledby="rep-summary-heading">
+          <h2 id="rep-summary-heading" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Financial Aggregates Summary</h2>
+
+          <div class="summary-cards-grid-4">
+            <!-- Expected Contributions -->
+            <div class="summary-card" style="border-top: 3px solid #111C2E;">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Expected Contributions</span>
+                <div class="summary-card-icon" style="background-color: var(--surface-subtle); color: var(--navy-primary);" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="rep-sum-expected">₦0.00</div>
+              <div class="summary-card-meta">Scheduled dues for selected filters</div>
+            </div>
+
+            <!-- Total Verified Contributions -->
+            <div class="summary-card card-verified">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Total Verified Contributions</span>
+                <div class="summary-card-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="rep-sum-verified">₦0.00</div>
+              <div class="summary-card-meta">Confirmed receipts in escrow</div>
+            </div>
+
+            <!-- Outstanding Contributions -->
+            <div class="summary-card" style="border-top: 3px solid #DC2626;">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Outstanding Contributions</span>
+                <div class="summary-card-icon" style="background-color: #FEF2F2; color: #DC2626;" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="rep-sum-outstanding" style="color: #DC2626;">₦0.00</div>
+              <div class="summary-card-meta">Net dues awaiting collection</div>
+            </div>
+
+            <!-- Payment Completion Rate -->
+            <div class="summary-card" style="border-top: 3px solid #0284C7;">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Payment Completion Rate</span>
+                <div class="summary-card-icon" style="background-color: #E0F2FE; color: #0284C7;" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="rep-sum-rate">0.0%</div>
+              <div class="summary-card-meta">Verified vs. expected fulfillment ratio</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 3: ANALYTICS CHARTS (PURE SVG & VANILLA JS)
+             ================================================================== -->
+        <section aria-labelledby="analytics-heading">
+          <h2 id="analytics-heading" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Analytics Charts</h2>
+
+          <div class="analytics-charts-grid">
+
+            <!-- Chart 1: Collection Trends Timeline (Top Full/Wide) -->
+            <div class="analytics-card analytics-full-width-chart">
+              <div class="analytics-card-header">
+                <div>
+                  <h3 class="dashboard-card-title" style="font-size: 1.15rem;">Collection Trends &amp; Daily Inflows</h3>
+                  <p class="dashboard-card-subtitle">Verified deposit velocity over the selected filter interval</p>
+                </div>
+                <div class="chart-legend-row" style="margin-top: 0; padding-top: 0; border-top: none;">
+                  <div class="legend-item">
+                    <span class="legend-dot" style="background-color: #10B981;"></span>
+                    <span>Verified Inflow (₦)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="analytics-chart-container" id="chart-timeline-svg">
+                <!-- Dynamically rendered by js/reports.js -->
+              </div>
+              <div class="chart-tooltip-reports" id="chart-tooltip-timeline"></div>
+            </div>
+
+            <!-- Chart 2: Expected versus Verified Comparative Chart -->
+            <div class="analytics-card">
+              <div class="analytics-card-header">
+                <div>
+                  <h3 class="dashboard-card-title" style="font-size: 1.1rem;">Expected vs. Verified Collections</h3>
+                  <p class="dashboard-card-subtitle">Scheduled cycle quotas vs. confirmed receipts per circle</p>
+                </div>
+              </div>
+
+              <div class="analytics-chart-container" id="chart-comparison-svg">
+                <!-- Dynamically rendered by js/reports.js -->
+              </div>
+              <div class="chart-tooltip-reports" id="chart-tooltip-comparison"></div>
+
+              <div class="chart-legend-row">
+                <div class="legend-item">
+                  <span class="legend-dot" style="background-color: #1E293B;"></span>
+                  <span>Expected Target</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot" style="background-color: #10B981;"></span>
+                  <span>Verified Escrow</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chart 3: Contribution Status Breakdown Donut -->
+            <div class="analytics-card">
+              <div class="analytics-card-header">
+                <div>
+                  <h3 class="dashboard-card-title" style="font-size: 1.1rem;">Contribution Status Breakdown</h3>
+                  <p class="dashboard-card-subtitle">Proportion of verified, pending review, and rejected slips</p>
+                </div>
+              </div>
+
+              <div class="analytics-chart-container" id="chart-status-svg" style="min-height: 200px;">
+                <!-- Dynamically rendered by js/reports.js -->
+              </div>
+              <div class="chart-tooltip-reports" id="chart-tooltip-status"></div>
+
+              <div class="chart-legend-row">
+                <div class="legend-item">
+                  <span class="legend-dot" style="background-color: #10B981;"></span>
+                  <span>Verified: <strong id="leg-status-verified">0</strong></span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot" style="background-color: #F59E0B;"></span>
+                  <span>Pending: <strong id="leg-status-pending">0</strong></span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-dot" style="background-color: #DC2626;"></span>
+                  <span>Rejected: <strong id="leg-status-rejected">0</strong></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 4: MEMBER REPORT TABLE
+             ================================================================== -->
+        <section class="dashboard-card" aria-labelledby="member-report-heading" style="margin-bottom: 1.75rem;">
+          <div class="dashboard-card-header">
+            <div>
+              <h2 class="dashboard-card-title" id="member-report-heading">Member Contribution &amp; Compliance Report</h2>
+              <p class="dashboard-card-subtitle">Detailed breakdown of individual scheduled dues, verified credits, and overdue counts</p>
+            </div>
+          </div>
+
+          <div class="history-table-container">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th scope="col">Member Name &amp; Circle</th>
+                  <th scope="col">Expected Contribution</th>
+                  <th scope="col">Verified Contribution</th>
+                  <th scope="col">Outstanding Amount</th>
+                  <th scope="col">Completion Rate</th>
+                  <th scope="col">Overdue Cycles</th>
+                </tr>
+              </thead>
+              <tbody id="rep-member-table-body">
+                <!-- Dynamically populated via js/reports.js -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Empty State -->
+          <div class="table-empty-state" id="rep-member-empty-state" style="display: none; padding: 2.5rem; text-align: center;">
+            <svg class="empty-state-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 0.75rem auto; color: #94A3B8;">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <h4 style="font-size: 1rem; font-weight: 700; color: var(--navy-primary); margin-bottom: 0.25rem;">No Member Records Match Criteria</h4>
+            <p style="font-size: 0.8125rem; color: var(--text-muted); max-width: 420px; margin: 0 auto;">Try expanding the date bounds or selecting "All Contribution Circles" to populate member audit rows.</p>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 5: GROUP REPORT TABLE
+             ================================================================== -->
+        <section class="dashboard-card" aria-labelledby="group-report-heading" style="margin-bottom: 1.75rem;">
+          <div class="dashboard-card-header">
+            <div>
+              <h2 class="dashboard-card-title" id="group-report-heading">Circle Groups Aggregate Performance</h2>
+              <p class="dashboard-card-subtitle">Collective collection metrics, participation rosters, and recovery rates per active circle</p>
+            </div>
+          </div>
+
+          <div class="history-table-container">
+            <table class="history-table">
+              <thead>
+                <tr>
+                  <th scope="col">Circle Group &amp; Terms</th>
+                  <th scope="col">Roster Size</th>
+                  <th scope="col">Expected Collections</th>
+                  <th scope="col">Verified Collections</th>
+                  <th scope="col">Outstanding Collections</th>
+                  <th scope="col">Target Fulfillment</th>
+                </tr>
+              </thead>
+              <tbody id="rep-group-table-body">
+                <!-- Dynamically populated via js/reports.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SECTION 6: EXPORT OPTIONS (EXPORT CSV, PRINT, PDF PLACEHOLDER)
+             ================================================================== -->
+        <section class="export-panel-card" aria-labelledby="export-panel-heading">
+          <div class="export-panel-info">
+            <h3 id="export-panel-heading">Export &amp; Share Financial Statements</h3>
+            <p>
+              Download audit-grade CSV spreadsheets matching current filters, generate clean print statements for compliance archiving, or review server PDF pipeline configurations.
+            </p>
+          </div>
+
+          <div class="export-actions-row">
+            <!-- 1. Export CSV -->
+            <button type="button" class="btn-export-csv" id="btn-export-csv" aria-label="Export filtered data to CSV file">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Export CSV</span>
+            </button>
+
+            <!-- 2. Print Report -->
+            <button type="button" class="btn-print-report" id="btn-print-report" aria-label="Print formatted financial report">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+              </svg>
+              <span>Print Report</span>
+            </button>
+
+            <!-- 3. Download PDF (Demo Placeholder) -->
+            <button type="button" class="btn-pdf-placeholder" id="btn-download-pdf-placeholder" aria-label="Download PDF statement (Demo placeholder)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <span>Download PDF</span>
+              <span class="placeholder-pill">Demo Placeholder</span>
+            </button>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- In-App Toast Container -->
+  <div id="reports-toast-container" class="admin-toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Vanilla JavaScript Controller -->
+  <script src="./js/reports.js"></script>
+</body>
+</html>

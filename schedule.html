@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contribution Schedule — ContriTrack</title>
+  <meta name="description" content="Stay organized and keep track of your contribution deadlines with ContriTrack's interactive calendar.">
+
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+
+  <!-- Full App Shell -->
+  <div class="app-shell">
+
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- ======================================================================
+         SIDEBAR NAVIGATION
+         ====================================================================== -->
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Member Navigation">
+      <div>
+        <!-- Sidebar Brand Header -->
+        <div class="sidebar-header">
+          <a href="index.html" class="nav-brand" aria-label="ContriTrack Home">
+            <div class="brand-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <span>Contri<span class="brand-accent">Track</span></span>
+          </a>
+          <button type="button" class="sidebar-close-btn" id="sidebar-close" aria-label="Close navigation sidebar">✕</button>
+        </div>
+
+        <!-- Sidebar Navigation Links -->
+        <nav class="sidebar-nav" aria-label="Dashboard sections">
+          <span class="sidebar-section-title">Personal Savings</span>
+          <a href="dashboard.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Overview</span>
+          </a>
+
+          <a href="contributions.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+            <span>Contributions &amp; Payments</span>
+          </a>
+
+          <a href="schedule.html" class="sidebar-nav-item active" aria-current="page">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Contribution Schedule</span>
+          </a>
+
+          <a href="groups.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Groups &amp; Circles</span>
+          </a>
+
+          <span class="sidebar-section-title">Account</span>
+          <a href="account.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Notifications &amp; Profile</span>
+          </a>
+
+          <a href="admin-dashboard.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Admin Control Desk</span>
+          </a>
+
+          <a href="index.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Landing Page</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- User Profile & Log Out Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="sidebar-user-avatar" aria-hidden="true">SJ</div>
+          <div class="sidebar-user-meta">
+            <span class="sidebar-user-name">Sarah Jenkins</span>
+            <span class="sidebar-user-role">Alpha Circle Member</span>
+          </div>
+        </div>
+        <a href="auth.html?mode=login" class="sidebar-logout-btn" title="Sign out" aria-label="Sign out">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN CONTENT AREA
+         ====================================================================== -->
+    <div class="app-main">
+      
+      <!-- Top Application Header -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle navigation menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="topbar-headings">
+            <h1>Contribution Schedule</h1>
+            <p>Stay organized and keep track of your contribution deadlines.</p>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <a href="contributions.html" class="btn btn-primary btn-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Submit Contribution
+          </a>
+        </div>
+      </header>
+
+      <!-- Dashboard Content Container -->
+      <main class="dashboard-content">
+
+        <!-- ==================================================================
+             SECTION 1: SCHEDULE SUMMARY CARDS
+             ================================================================== -->
+        <section aria-labelledby="schedule-summary-heading">
+          <h2 id="schedule-summary-heading" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Schedule Monthly Summary</h2>
+
+          <div class="summary-cards-grid-4">
+            <!-- Card 1: Expected This Month -->
+            <div class="summary-card" style="border-top: 3px solid #111C2E;">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Expected This Month</span>
+                <div class="summary-card-icon" style="background-color: var(--surface-subtle); color: var(--navy-primary);" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="sum-expected-month">₦410,000.00</div>
+              <div class="summary-card-meta">Scheduled contribution quota</div>
+            </div>
+
+            <!-- Card 2: Verified This Month -->
+            <div class="summary-card card-verified">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Verified This Month</span>
+                <div class="summary-card-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="sum-verified-month">₦285,000.00</div>
+              <div class="summary-card-meta" id="sum-verified-meta">70% cycle target completed</div>
+            </div>
+
+            <!-- Card 3: Upcoming Contributions -->
+            <div class="summary-card card-upcoming">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Upcoming Contributions</span>
+                <div class="summary-card-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="sum-upcoming-month">₦105,000.00</div>
+              <div class="summary-card-meta" id="sum-upcoming-meta">7 deadlines remaining</div>
+            </div>
+
+            <!-- Card 4: Overdue Contributions -->
+            <div class="summary-card card-overdue">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Overdue Contributions</span>
+                <div class="summary-card-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums" id="sum-overdue-month">₦20,000.00</div>
+              <div class="summary-card-meta" id="sum-overdue-meta" style="color: #DC2626;">1 missed contribution flagged</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             MAIN SPLIT LAYOUT: CALENDAR (LEFT) & UPCOMING/RULES (RIGHT)
+             ================================================================== -->
+        <div class="schedule-split-layout">
+
+          <!-- ================================================================
+               SECTION 2: MONTHLY CALENDAR
+               ================================================================ -->
+          <section class="calendar-card" aria-labelledby="cal-heading">
+            <!-- Calendar Navigation Topbar -->
+            <div class="calendar-topbar">
+              <div class="calendar-current-month" id="cal-heading">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--emerald);" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span id="cal-current-month-text">October 2026</span>
+              </div>
+
+              <div class="calendar-nav-controls">
+                <button type="button" class="btn-today-jump" id="cal-today-jump" title="Jump to current date">
+                  Today
+                </button>
+                <button type="button" class="btn-cal-nav" id="cal-prev-month" aria-label="Previous month">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <button type="button" class="btn-cal-nav" id="cal-next-month" aria-label="Next month">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Days of the Week Header -->
+            <div class="calendar-grid-header">
+              <div class="cal-header-cell">Sun</div>
+              <div class="cal-header-cell">Mon</div>
+              <div class="cal-header-cell">Tue</div>
+              <div class="cal-header-cell">Wed</div>
+              <div class="cal-header-cell">Thu</div>
+              <div class="cal-header-cell">Fri</div>
+              <div class="cal-header-cell">Sat</div>
+            </div>
+
+            <!-- Calendar Days 7x6 Grid -->
+            <div class="calendar-days-grid" id="cal-days-grid" role="grid" aria-label="Contribution Calendar">
+              <!-- Dynamically generated by js/schedule.js -->
+            </div>
+
+            <!-- Empty State for Months with No Scheduled Contributions -->
+            <div id="cal-empty-state" style="display: none; padding: 1.5rem; text-align: center; background-color: #FAFBFD; border-radius: var(--radius-md); margin-top: 1rem; border: 1px dashed var(--border-light);">
+              <p style="font-size: 0.875rem; color: #64748B;">No contribution schedules configured for this month.</p>
+              <a href="contributions.html" class="btn btn-outline btn-sm" style="margin-top: 0.5rem;">Submit Ad-Hoc Deposit</a>
+            </div>
+
+            <!-- Accessible Calendar Legend Strip -->
+            <div class="calendar-legend-bar">
+              <div class="legend-items">
+                <div class="legend-item">
+                  <span class="legend-swatch paid" aria-hidden="true"></span>
+                  <span><strong>✓ Paid</strong> (Verified)</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-swatch upcoming" aria-hidden="true"></span>
+                  <span><strong>⏳ Due</strong> (Upcoming)</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-swatch overdue" aria-hidden="true"></span>
+                  <span><strong>⚠ Overdue</strong> (Action Required)</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-swatch rest" aria-hidden="true"></span>
+                  <span><strong>— Rest Day</strong> (No Dues)</span>
+                </div>
+              </div>
+              <span style="font-size: 0.75rem; color: #64748B;">Click any scheduled date for full details</span>
+            </div>
+          </section>
+
+          <!-- ================================================================
+               RIGHT COLUMN: UPCOMING PAYMENTS & CONTRIBUTION RULES
+               ================================================================ -->
+          <div>
+            
+            <!-- SECTION 3: UPCOMING PAYMENTS -->
+            <section class="upcoming-payments-card" aria-labelledby="upcoming-heading">
+              <div class="dashboard-card-header" style="margin-bottom: 1.25rem;">
+                <div>
+                  <h3 class="dashboard-card-title" id="upcoming-heading" style="font-size: 1.15rem;">Upcoming Deadlines</h3>
+                  <p class="dashboard-card-subtitle">Next scheduled contributions requiring submission.</p>
+                </div>
+              </div>
+
+              <div class="upcoming-list" id="upcoming-payments-list">
+                <!-- Dynamically populated via js/schedule.js -->
+              </div>
+
+              <!-- Upcoming Empty State -->
+              <div id="upcoming-empty-state" style="display: none; text-align: center; padding: 2rem 1rem;">
+                <p style="font-size: 0.85rem; color: var(--text-muted);">All scheduled contributions for this period are completed!</p>
+              </div>
+
+              <div style="margin-top: 1.25rem; text-align: center;">
+                <a href="contributions.html" class="btn btn-secondary btn-sm" style="width: 100%;">
+                  Go to Payment &amp; Upload Portal &rarr;
+                </a>
+              </div>
+            </section>
+
+            <!-- SECTION 4: CONTRIBUTION RULES -->
+            <section class="rules-card" aria-labelledby="rules-heading">
+              <div class="dashboard-card-header" style="margin-bottom: 1.25rem;">
+                <div>
+                  <h3 class="dashboard-card-title" id="rules-heading" style="font-size: 1.15rem;">Circle Contribution Rules</h3>
+                  <p class="dashboard-card-subtitle">Alpha Thrift Syndicate · Cycle #4 Operating Agreement</p>
+                </div>
+              </div>
+
+              <div class="rules-list">
+                <div class="rule-row">
+                  <span class="rule-label">Daily Contribution Quota</span>
+                  <span class="rule-value tabular-nums" style="color: var(--emerald); font-weight: 800;">₦15,000.00</span>
+                </div>
+                <div class="rule-row">
+                  <span class="rule-label">Cycle Start Date</span>
+                  <span class="rule-value tabular-nums">Thu, Oct 01, 2026</span>
+                </div>
+                <div class="rule-row">
+                  <span class="rule-label">Cycle End Date</span>
+                  <span class="rule-value tabular-nums">Sat, Oct 31, 2026</span>
+                </div>
+                <div class="rule-row">
+                  <span class="rule-label">Grace Period</span>
+                  <span class="rule-value">24 Hours (Next Day 11:59 PM)</span>
+                </div>
+                <div class="rule-row">
+                  <span class="rule-label">Scheduled Days</span>
+                  <span class="rule-value">Monday – Saturday</span>
+                </div>
+                <div class="rule-row">
+                  <span class="rule-label">Designated Rest Days</span>
+                  <span class="rule-value" style="color: #64748B;">Sundays (Reconciliation)</span>
+                </div>
+              </div>
+
+              <div style="background-color: var(--surface-subtle); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 0.85rem; margin-top: 1.25rem; font-size: 0.775rem; color: var(--text-muted); line-height: 1.45;">
+                📋 <strong>Rule Enforcement:</strong> Contributions must be uploaded with bank transfer references before daily midnight cutoffs. Missed quotas beyond the grace period trigger overdue alerts and coordinator follow-up.
+              </div>
+            </section>
+
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       DATE DETAILS MODAL (Opens when clicking any scheduled date)
+       ========================================================================== -->
+  <div class="modal-overlay" id="date-details-modal" role="dialog" aria-modal="true" aria-labelledby="modal-schedule-date">
+    <div class="modal-card">
+      <div class="modal-header-row">
+        <div class="modal-title-group">
+          <h3 id="modal-schedule-date">Scheduled Date Breakdown</h3>
+          <p>Contribution deadline and circle target status</p>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-date-close" aria-label="Close dialog">✕</button>
+      </div>
+
+      <div class="modal-details-grid" style="margin-bottom: 1.25rem;">
+        <div class="detail-item">
+          <span class="detail-label">Circle Group</span>
+          <span class="detail-val" id="modal-schedule-group">Alpha Thrift Syndicate</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Status</span>
+          <div>
+            <span id="modal-schedule-status" class="badge-status status-verified">✓ Verified</span>
+          </div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Daily Expected Quota</span>
+          <span class="detail-val tabular-nums" id="modal-schedule-amount" style="color: var(--emerald); font-weight: 800; font-size: 1.15rem;">₦15,000.00</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Cutoff Time</span>
+          <span class="detail-val">11:59 PM (WAT)</span>
+        </div>
+        <div class="detail-item" style="grid-column: 1 / -1;">
+          <span class="detail-label">Schedule Note / Description</span>
+          <span class="detail-val" id="modal-schedule-notes" style="font-weight: 400; font-size: 0.875rem;">Daily cycle contribution dues.</span>
+        </div>
+      </div>
+
+      <div class="status-distinction-banner" style="margin-bottom: 1.5rem;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <div style="font-size: 0.8rem;">
+          Contributions for this date are reconciled against escrow bank deposits. If you have completed a transfer, please submit your reference slip in the Payments portal.
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: flex-end; gap: 0.75rem;">
+        <button type="button" class="btn btn-secondary" id="modal-date-dismiss">Close</button>
+        <a href="contributions.html" class="btn btn-primary" id="modal-schedule-pay-btn">Submit Payment for this Date &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vanilla JavaScript Controller -->
+  <script src="./js/schedule.js"></script>
+</body>
+</html>

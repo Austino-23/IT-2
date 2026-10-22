@@ -1,0 +1,249 @@
+/* ==========================================================================
+   ContriTrack — Responsive Stylesheet (css/responsive.css)
+   Unified cross-device breakpoints, mobile drawers, touch targets, and overflow safety
+   ========================================================================== */
+
+/* 1. Universal Viewport & Overflow Safety */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure images and media scale within containers */
+img, svg, canvas, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Touch targets on mobile: minimum 40-44px for accessibility */
+button, 
+.btn, 
+.sidebar-nav-item, 
+.chart-tab-btn, 
+.filter-select,
+.form-input {
+  touch-action: manipulation;
+}
+
+/* 2. Responsive Breakpoint: Large Desktops (max-width: 1280px) */
+@media (max-width: 1280px) {
+  .dashboard-content {
+    padding: 1.5rem;
+  }
+
+  .summary-cards-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .analytics-charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-split-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 3. Responsive Breakpoint: Tablets & Small Desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  /* Sidebar off-canvas drawer */
+  .app-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+  }
+
+  .app-sidebar.open,
+  .app-sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-close-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(11, 18, 32, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+  }
+
+  .sidebar-backdrop.active {
+    display: block;
+  }
+
+  .sidebar-toggle-btn {
+    display: inline-flex;
+  }
+
+  .app-main {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .app-topbar {
+    padding: 1rem 1.25rem;
+  }
+
+  .quick-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-split-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 4. Responsive Breakpoint: Mobile Phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 1rem;
+  }
+
+  /* Topbar stacking */
+  .app-topbar {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .topbar-headings h1 {
+    font-size: 1.25rem;
+  }
+
+  .topbar-headings p {
+    font-size: 0.775rem;
+  }
+
+  .topbar-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Summary cards stack on mobile */
+  .summary-cards-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-card {
+    padding: 1.15rem;
+  }
+
+  .summary-card-value {
+    font-size: 1.5rem;
+  }
+
+  /* Split grids stack */
+  .form-row-2col,
+  .form-row-3col {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem;
+  }
+
+  /* Table containers scroll cleanly with shadow clues */
+  .history-table-container {
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
+  .history-table th,
+  .history-table td {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.8125rem;
+    white-space: nowrap;
+  }
+
+  /* Modals on small screens */
+  .modal-overlay {
+    padding: 0.75rem;
+  }
+
+  .modal-card {
+    padding: 1.25rem;
+    max-height: 94vh;
+  }
+
+  /* Toasts stack safely at bottom */
+  .admin-toast-container {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    width: auto;
+    max-width: none;
+  }
+
+  /* Buttons on mobile */
+  .filter-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .filter-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .export-panel-card {
+    padding: 1.25rem;
+  }
+
+  .export-actions-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .export-actions-row .btn,
+  .export-actions-row button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* 5. Responsive Breakpoint: Extra Small Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .dashboard-card {
+    padding: 1.15rem 1rem;
+  }
+
+  .dashboard-card-title {
+    font-size: 1.05rem;
+  }
+
+  .chart-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .chart-segmented-controls {
+    width: 100%;
+    display: flex;
+  }
+
+  .chart-tab-btn {
+    flex: 1;
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.5rem;
+  }
+}

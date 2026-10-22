@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ContriTrack — Daily Contribution & Savings Management</title>
+  <meta name="description" content="Track daily contributions, monitor savings progress, and manage group savings with a transparent, modern fintech platform.">
+  <meta property="og:title" content="ContriTrack — Daily Contribution & Savings Management">
+  <meta property="og:description" content="Track daily contributions, monitor savings progress, and manage group savings with a transparent, modern fintech platform.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts Preconnect & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. NAVIGATION BAR
+       ========================================================================== -->
+  <header class="site-header" id="top-nav">
+    <div class="container navbar">
+      <!-- Brand Zone -->
+      <a href="#hero" class="nav-brand" aria-label="ContriTrack Home">
+        <div class="brand-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+        </div>
+        <span>Contri<span class="brand-accent">Track</span></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-menu-wrapper" aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#dashboard-preview" class="nav-link">Dashboard Demo</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Action Zone -->
+      <div class="nav-actions">
+        <a href="auth.html?mode=login" class="btn btn-outline btn-sm">Log In</a>
+        <a href="auth.html?mode=register" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button type="button" class="mobile-toggle" aria-label="Open mobile navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Responsive Mobile Menu Drawer -->
+    <div class="mobile-nav" id="mobile-nav-drawer" aria-label="Mobile Navigation">
+      <ul class="mobile-nav-list">
+        <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#features" class="mobile-nav-link">Features</a></li>
+        <li><a href="#how-it-works" class="mobile-nav-link">How It Works</a></li>
+        <li><a href="#dashboard-preview" class="mobile-nav-link">Dashboard Demo</a></li>
+      </ul>
+      <div class="mobile-nav-actions">
+        <a href="auth.html?mode=login" class="btn btn-outline" style="width: 100%;">Log In</a>
+        <a href="auth.html?mode=register" class="btn btn-primary" style="width: 100%;">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         2. HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-accent" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <!-- Hero Content (Left) -->
+        <div class="hero-content">
+          <span class="hero-eyebrow">Daily Contribution & Savings Management</span>
+          <h1 class="hero-title">Build a Better Saving Habit, One Day at a Time.</h1>
+          <p class="hero-description">
+            Track your daily contributions, monitor your savings progress, and manage group savings with a simpler, more transparent system.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="auth.html?mode=register" class="btn btn-primary btn-lg">Get Started</a>
+            <a href="#features" class="btn btn-secondary btn-lg">Explore Features</a>
+          </div>
+
+          <div class="hero-trust-strip">
+            <span>Verified Ledger System</span>
+            <span class="sep" aria-hidden="true">·</span>
+            <span>Zero Hidden Charges</span>
+            <span class="sep" aria-hidden="true">·</span>
+            <span>Multi-Circle Support</span>
+          </div>
+        </div>
+
+        <!-- Hero Fintech Dashboard Preview Card (Right) -->
+        <div class="hero-preview">
+          <div class="preview-window">
+            <div class="preview-header">
+              <div class="preview-group-info">
+                <h4>Alpha Thrift Syndicate</h4>
+                <p>Cycle #4 · Daily Contribution Group</p>
+              </div>
+              <span class="preview-badge-live">Live Pool Active</span>
+            </div>
+
+            <!-- Sample Stats Row -->
+            <div class="preview-stats-row">
+              <div class="preview-stat-card">
+                <div class="stat-label">Total Group Pool</div>
+                <div class="stat-value tabular-nums">$38,400.00</div>
+                <div class="stat-delta tabular-nums">+12.4% this month</div>
+              </div>
+              <div class="preview-stat-card">
+                <div class="stat-label">Today's Collected</div>
+                <div class="stat-value tabular-nums">$1,200.00</div>
+                <div class="stat-delta tabular-nums">10 of 12 deposited</div>
+              </div>
+            </div>
+
+            <!-- Contribution Progress Bar -->
+            <div class="preview-progress-box">
+              <div class="progress-header">
+                <span>Cycle Milestone Progress</span>
+                <span class="tabular-nums">82.8% Completed</span>
+              </div>
+              <div class="progress-track" role="progressbar" aria-valuenow="82.8" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-fill" style="width: 82.8%;"></div>
+              </div>
+            </div>
+
+            <!-- Recent Transactions List -->
+            <div class="preview-txns">
+              <div class="preview-txns-title">Recent Group Contributions</div>
+              <div class="preview-txns-list">
+                <div class="preview-txn-item">
+                  <div class="txn-member">
+                    <span class="member-avatar">MV</span>
+                    <div class="txn-meta">
+                      <h5>Marcus Vance</h5>
+                      <p class="tabular-nums">Today, 09:42 AM · Bank Transfer</p>
+                    </div>
+                  </div>
+                  <div style="text-align: right;">
+                    <div class="tabular-nums" style="font-weight: 700; color: #FFFFFF;">+$100.00</div>
+                    <span class="txn-status status-verified">✓ Verified</span>
+                  </div>
+                </div>
+
+                <div class="preview-txn-item">
+                  <div class="txn-member">
+                    <span class="member-avatar">ER</span>
+                    <div class="txn-meta">
+                      <h5>Elena Rostova</h5>
+                      <p class="tabular-nums">Today, 10:30 AM · Mobile Slip</p>
+                    </div>
+                  </div>
+                  <div style="text-align: right;">
+                    <div class="tabular-nums" style="font-weight: 700; color: #FFFFFF;">+$100.00</div>
+                    <span class="txn-status status-verified">✓ Verified</span>
+                  </div>
+                </div>
+
+                <div class="preview-txn-item">
+                  <div class="txn-member">
+                    <span class="member-avatar">DO</span>
+                    <div class="txn-meta">
+                      <h5>David Okafor</h5>
+                      <p class="tabular-nums">Today, 11:05 AM · Cash Log</p>
+                    </div>
+                  </div>
+                  <div style="text-align: right;">
+                    <div class="tabular-nums" style="font-weight: 700; color: #FFFFFF;">$100.00</div>
+                    <span class="txn-status status-pending">⏳ In Review</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. TRUST AND BENEFITS SECTION
+         ========================================================================== -->
+    <section class="benefits-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Core Advantages</span>
+          <h2 class="section-title">Built for Absolute Trust and Complete Transparency</h2>
+          <p class="section-subtitle">
+            Say goodbye to disorganized ledgers, disputed payments, and missed contributions. ContriTrack delivers enterprise-grade clarity to community savings.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <!-- Benefit 1 -->
+          <article class="benefit-card fade-in-on-scroll">
+            <div class="benefit-icon-box" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h3>Transparent Contribution Records</h3>
+            <p>
+              Every deposit, date, and verification status is logged to an immutable record accessible to every authorized member. No hidden entries or lost records.
+            </p>
+          </article>
+
+          <!-- Benefit 2 -->
+          <article class="benefit-card fade-in-on-scroll">
+            <div class="benefit-icon-box" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3>Easy Savings Tracking</h3>
+            <p>
+              Visual progress bars, automated streak trackers, and clear goal projections make staying disciplined effortless and rewarding each day.
+            </p>
+          </article>
+
+          <!-- Benefit 3 -->
+          <article class="benefit-card fade-in-on-scroll">
+            <div class="benefit-icon-box" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3>Organized Group Management</h3>
+            <p>
+              Dedicated coordinator controls, automated member rotation schedules, dispute prevention, and instant payout notifications for groups of any size.
+            </p>
+          </article>
+        </div>
+
+        <!-- Trust Statistics Strip -->
+        <div class="trust-strip-container">
+          <div class="trust-stat-item">
+            <div class="trust-stat-number tabular-nums">$4.8M<span class="accent">+</span></div>
+            <div class="trust-stat-label">Contributions Tracked</div>
+          </div>
+          <div class="trust-stat-item">
+            <div class="trust-stat-number tabular-nums">1,250<span class="accent">+</span></div>
+            <div class="trust-stat-label">Active Savings Circles</div>
+          </div>
+          <div class="trust-stat-item">
+            <div class="trust-stat-number tabular-nums">99.8<span class="accent">%</span></div>
+            <div class="trust-stat-label">On-Time Completion Rate</div>
+          </div>
+          <div class="trust-stat-item">
+            <div class="trust-stat-number tabular-nums">100<span class="accent">%</span></div>
+            <div class="trust-stat-label">Verifiable Audit Trail</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. FEATURES SECTION
+         ========================================================================== -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Platform Features</span>
+          <h2 class="section-title">Everything You Need to Manage Daily Contributions</h2>
+          <p class="section-subtitle">
+            Comprehensive tools designed specifically for personal financial discipline, rotating credit groups, and cooperative thrift societies.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-card fade-in-on-scroll">
+            <div class="feature-icon-wrapper" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <h3>Daily Contribution Tracking</h3>
+            <p>
+              Log deposits with a single click. Configure custom schedules—daily, bi-weekly, or weekly—and instantly monitor your running personal balance.
+            </p>
+            <span class="feature-meta">Automated streak & tally</span>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card fade-in-on-scroll">
+            <div class="feature-icon-wrapper" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h3>Payment Verification</h3>
+            <p>
+              Dual-verification protocol allows members to attach transfer references or bank slips. Coordinators approve deposits with timestamped verification badges.
+            </p>
+            <span class="feature-meta">Zero dispute reconciliation</span>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card fade-in-on-scroll">
+            <div class="feature-icon-wrapper" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+            </div>
+            <h3>Contribution Reminders</h3>
+            <p>
+              Automated notifications sent prior to daily cutoff times so participants never forget a contribution. Reduces late payments and maintains circle health.
+            </p>
+            <span class="feature-meta">Smart SMS and email nudges</span>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card fade-in-on-scroll">
+            <div class="feature-icon-wrapper" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+            <h3>Group Management</h3>
+            <p>
+              Easily configure rotating payouts (ROSCAs, Esusu, Chit Funds), pooled funds, or targeted savings. Assign roles, invite trusted peers, and customize payout dates.
+            </p>
+            <span class="feature-meta">Flexible rotation rules</span>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="feature-card fade-in-on-scroll">
+            <div class="feature-icon-wrapper" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
+            </div>
+            <h3>Savings Analytics</h3>
+            <p>
+              Gain clarity on collective savings velocity, member discipline scores, cumulative monthly yields, and projected completion targets through visual charts.
+            </p>
+            <span class="feature-meta">Real-time financial telemetry</span>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="feature-card fade-in-on-scroll">
+            <div class="feature-icon-wrapper" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </div>
+            <h3>Downloadable Reports</h3>
+            <p>
+              Export structured CSV and PDF contribution statements for tax planning, cooperative general meetings, or personal accounting with a single click.
+            </p>
+            <span class="feature-meta">Audit-ready statement exports</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. HOW IT WORKS
+         ========================================================================== -->
+    <section class="how-section" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Simple Onboarding</span>
+          <h2 class="section-title">How ContriTrack Works in Four Simple Steps</h2>
+          <p class="section-subtitle">
+            Get your individual discipline or collaborative savings circle up and running in less than five minutes.
+          </p>
+        </div>
+
+        <div class="steps-container">
+          <!-- Step 1 -->
+          <div class="step-card fade-in-on-scroll">
+            <div class="step-number">01</div>
+            <h3>Create Your Account</h3>
+            <p>
+              Sign up with your email or phone number in under 60 seconds. Set your profile and define your initial savings goals.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card fade-in-on-scroll">
+            <div class="step-number">02</div>
+            <h3>Join or Create a Group</h3>
+            <p>
+              Launch a private savings circle or join an existing cooperative using a secure group invitation code.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card fade-in-on-scroll">
+            <div class="step-number">03</div>
+            <h3>Submit Your Contributions</h3>
+            <p>
+              Deposit your daily dues, enter your payment reference, and receive immediate verification receipts from the coordinator.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card fade-in-on-scroll">
+            <div class="step-number">04</div>
+            <h3>Track Your Savings</h3>
+            <p>
+              Monitor your personal growth, track circle milestones in real-time, and collect your guaranteed lump-sum payout on schedule.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. DASHBOARD PREVIEW
+         ========================================================================== -->
+    <section class="dashboard-section" id="dashboard-preview">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-kicker">Experience the Interface</span>
+          <h2 class="section-title">Interactive Dashboard Preview</h2>
+          <p class="section-subtitle">
+            Test the live demo interface below. Switch between savings groups, verify member payments, or simulate a new contribution.
+          </p>
+        </div>
+
+        <!-- Clearly Labeled DEMO DATA Notice -->
+        <div class="demo-disclaimer-banner" role="status">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <span><strong>DEMO DATA:</strong> Fictional transactions and member names displayed for demonstration purposes only.</span>
+          </div>
+          <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.85;">Sandbox Mode</span>
+        </div>
+
+        <!-- Simulated Dashboard Application Frame -->
+        <div class="dashboard-mockup">
+          <!-- Mockup Top Bar -->
+          <div class="mockup-app-bar">
+            <div class="app-bar-user">
+              <span class="app-avatar" aria-hidden="true">SJ</span>
+              <div class="app-user-info">
+                <h4>Sarah Jenkins</h4>
+                <p>Circle Coordinator · ContriTrack Verified Member</p>
+              </div>
+            </div>
+
+            <div class="app-bar-controls">
+              <a href="dashboard.html" class="btn btn-outline btn-sm" style="font-size: 0.775rem; padding: 0.35rem 0.75rem;">
+                Member Dashboard &rarr;
+              </a>
+              <a href="contributions.html" class="btn btn-primary btn-sm" style="font-size: 0.775rem; padding: 0.35rem 0.75rem;">
+                Contributions &rarr;
+              </a>
+              <label for="dashboard-group-select" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Select Group</label>
+              <select id="dashboard-group-select" class="group-select" aria-label="Select Demo Savings Group">
+                <option value="alpha">Alpha Thrift Syndicate (Cycle #4)</option>
+                <option value="family">Family Home Builder Fund</option>
+                <option value="tech">Tech Syndicate Savings Pool</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Mockup Body Content -->
+          <div class="mockup-body">
+            <!-- 4 Required Dashboard KPI Cards -->
+            <div class="dashboard-kpi-grid">
+              <!-- KPI 1: Total Savings -->
+              <div class="kpi-card">
+                <div class="kpi-title">Total Savings</div>
+                <div class="kpi-value tabular-nums" id="kpi-total-savings">$24,850.00</div>
+                <div class="kpi-sub positive tabular-nums">+$2,100 this cycle (12.4% MoM)</div>
+              </div>
+
+              <!-- KPI 2: Expected Contributions -->
+              <div class="kpi-card">
+                <div class="kpi-title">Expected Contributions</div>
+                <div class="kpi-value tabular-nums" id="kpi-expected">$30,000.00</div>
+                <div class="kpi-sub tabular-nums">Target for Cycle #4</div>
+              </div>
+
+              <!-- KPI 3: Outstanding Contributions -->
+              <div class="kpi-card">
+                <div class="kpi-title">Outstanding Contributions</div>
+                <div class="kpi-value tabular-nums" id="kpi-outstanding">$1,450.00</div>
+                <div class="kpi-sub warning tabular-nums">Pending coordinator check</div>
+              </div>
+
+              <!-- KPI 4: Contribution Progress -->
+              <div class="kpi-card">
+                <div class="kpi-title">Contribution Progress</div>
+                <div class="kpi-value tabular-nums" id="kpi-progress-percent">83%</div>
+                <div class="kpi-progress-bar-wrap">
+                  <div class="kpi-progress-bar-fill" id="kpi-progress-fill" style="width: 83%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dual Panel Layout: Member Ledger (Left) + Payout & Simulation (Right) -->
+            <div class="dashboard-panel-grid">
+              <!-- Member Contributions Table -->
+              <div class="dashboard-panel">
+                <div class="panel-header">
+                  <h3 class="panel-title">Member Daily Contribution Ledger</h3>
+                  <span style="font-size: 0.75rem; color: #64748B;">Click 'Verify' to test updates</span>
+                </div>
+                <div class="table-responsive">
+                  <table class="dashboard-table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Member</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Logged At</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="dashboard-member-rows">
+                      <!-- Dynamically populated by js/main.js -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Secondary Panel: Payout Details & Interactive Simulator -->
+              <div class="dashboard-panel">
+                <div class="panel-header">
+                  <h3 class="panel-title">Cycle Payout Schedule</h3>
+                </div>
+                <div class="cycle-card-body">
+                  <div class="next-payout-box">
+                    <div class="payout-label">Next Scheduled Recipient</div>
+                    <div class="payout-recipient" id="payout-recipient-name">Marcus Vance</div>
+                    <div class="payout-amount tabular-nums" id="payout-amount-val">$6,000.00</div>
+                    <div class="payout-date" id="payout-date-val">Friday, Oct 24, 2026</div>
+                  </div>
+
+                  <!-- Quick Interactive Simulator -->
+                  <div class="simulator-widget">
+                    <h5>Simulate A New Deposit</h5>
+                    <p>Enter an amount to see the ledger and total savings respond instantly:</p>
+                    <div class="sim-input-group">
+                      <input type="number" id="sim-deposit-amount" placeholder="Amount ($)" min="10" step="10" value="250">
+                      <button type="button" class="btn btn-primary btn-sm" id="sim-deposit-btn">Record Deposit</button>
+                    </div>
+                    <div id="sim-feedback" style="display: none; font-size: 0.75rem; color: #065F46; font-weight: 600; margin-top: 0.6rem;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. CALL TO ACTION
+         ========================================================================== -->
+    <section class="cta-section" id="cta">
+      <div class="container cta-container">
+        <h2 class="cta-title">Start Building Better Saving Habits Today.</h2>
+        <p class="cta-description">
+          Whether you want disciplined daily individual savings or an organized rotating group, ContriTrack provides the structure, transparency, and accountability you need.
+        </p>
+        <div class="cta-actions">
+          <a href="auth.html?mode=register" class="btn btn-primary btn-lg">Get Started Free</a>
+          <a href="auth.html?mode=login" class="btn btn-secondary btn-lg">Log In to Your Circle</a>
+        </div>
+        <div class="cta-guarantee">
+          <span>✓ Instant setup</span>
+          <span>✓ Bank-grade encryption</span>
+          <span>✓ No credit card required</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       8. FOOTER
+       ========================================================================== -->
+  <footer class="site-footer" id="legal">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand & Description -->
+        <div class="footer-brand-col">
+          <a href="#hero" class="footer-brand" aria-label="ContriTrack Home">
+            <div class="brand-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <span>Contri<span class="brand-accent">Track</span></span>
+          </a>
+          <p class="footer-desc">
+            A modern, transparent daily contribution and group savings management system engineered to cultivate lasting financial discipline.
+          </p>
+          <p style="font-size: 0.8125rem; color: #94A3B8;">
+            Designed for personal savers, self-help groups, ROSCAs, and cooperative societies.
+          </p>
+        </div>
+
+        <!-- Quick Navigation Links -->
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero" class="footer-link">Home</a></li>
+            <li><a href="#about" class="footer-link">About ContriTrack</a></li>
+            <li><a href="#features" class="footer-link">Platform Features</a></li>
+            <li><a href="#how-it-works" class="footer-link">How It Works</a></li>
+            <li><a href="#dashboard-preview" class="footer-link">Live Demo</a></li>
+          </ul>
+        </div>
+
+        <!-- Platform Solutions -->
+        <div>
+          <h4 class="footer-heading">Features</h4>
+          <ul class="footer-links">
+            <li><a href="#features" class="footer-link">Daily Tracking</a></li>
+            <li><a href="#features" class="footer-link">Payment Verification</a></li>
+            <li><a href="#features" class="footer-link">Smart Reminders</a></li>
+            <li><a href="#features" class="footer-link">Group Portals</a></li>
+            <li><a href="#features" class="footer-link">Financial Analytics</a></li>
+            <li><a href="#features" class="footer-link">CSV & PDF Exports</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information Placeholder -->
+        <div>
+          <h4 class="footer-heading">Contact & Support</h4>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <div>
+              <strong>Email:</strong> support@contritrack.com
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <div>
+              <strong>Inquiries:</strong> +1 (800) 555-0199
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <div>
+              100 Financial Center, Suite 400<br>New York, NY 10005
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Legal Notice & Copyright -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 ContriTrack Inc. All rights reserved. Built with semantic HTML5, CSS3 &amp; Vanilla JavaScript. Ready for Django integration.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#privacy" id="privacy-trigger">Privacy Policy</a>
+          <span aria-hidden="true">·</span>
+          <a href="#terms" id="terms-trigger">Terms and Conditions</a>
+          <span aria-hidden="true">·</span>
+          <a href="#dashboard-preview">Demo Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Legal Information Modal (Privacy Policy & Terms)
+       ========================================================================== -->
+  <div class="modal-overlay" id="legal-modal" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
+    <div class="modal-container">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close dialog">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <div class="modal-header">
+        <h3 id="legal-modal-title">ContriTrack Policies</h3>
+      </div>
+      <div class="modal-body" id="legal-modal-body">
+        <!-- Content injected dynamically by js/main.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Vanilla JavaScript -->
+  <script src="./js/main.js"></script>
+</body>
+</html>

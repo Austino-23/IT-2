@@ -1,0 +1,6 @@
+{
+  "name": "ContriTrack — Daily Contribution & Savings Management",
+  "description": "Track daily contributions, monitor savings progress, and manage group savings with a transparent, modern fintech platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Dashboard — ContriTrack</title>
+  <meta name="description" content="Personal contribution overview, savings progress, active circles, and payout schedules on ContriTrack.">
+  
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/dashboard.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+
+  <!-- Full App Shell -->
+  <div class="app-shell">
+
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- ======================================================================
+         SIDEBAR NAVIGATION
+         ====================================================================== -->
+    <aside class="app-sidebar" id="app-sidebar" aria-label="Member Navigation">
+      <div>
+        <!-- Sidebar Brand Header -->
+        <div class="sidebar-header">
+          <a href="index.html" class="nav-brand" aria-label="ContriTrack Home">
+            <div class="brand-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <span>Contri<span class="brand-accent">Track</span></span>
+          </a>
+          <button type="button" class="sidebar-close-btn" id="sidebar-close" aria-label="Close navigation sidebar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Sidebar Navigation Links -->
+        <nav class="sidebar-nav" aria-label="Dashboard sections">
+          <span class="sidebar-section-title">Member Navigation</span>
+          <a href="dashboard.html" class="sidebar-nav-item active" aria-current="page">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Overview Dashboard</span>
+          </a>
+
+          <a href="contributions.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+            <span>Contributions &amp; Payments</span>
+          </a>
+
+          <a href="schedule.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Contribution Schedule</span>
+          </a>
+
+          <a href="groups.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <span>Groups &amp; Members</span>
+          </a>
+
+          <span class="sidebar-section-title">Administration &amp; Analytics</span>
+          <a href="admin-dashboard.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Admin Console</span>
+          </a>
+
+          <a href="reports.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+            <span>Reports &amp; Analytics</span>
+          </a>
+
+          <span class="sidebar-section-title">Account &amp; Settings</span>
+          <a href="account.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span>Notifications &amp; Profile</span>
+          </a>
+
+          <a href="index.html" class="sidebar-nav-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Landing Page</span>
+          </a>
+        </nav>
+      </div>
+
+      <!-- User Profile & Log Out Footer -->
+      <div class="sidebar-footer">
+        <div class="sidebar-user">
+          <div class="sidebar-user-avatar" aria-hidden="true">MV</div>
+          <div class="sidebar-user-meta">
+            <span class="sidebar-user-name">Marcus Vance</span>
+            <span class="sidebar-user-role">Active Member</span>
+          </div>
+        </div>
+        <a href="auth.html?mode=login" class="sidebar-logout-btn" title="Sign out" aria-label="Sign out">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN CONTENT AREA
+         ====================================================================== -->
+    <div class="app-main">
+      
+      <!-- Top Application Header -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Toggle navigation menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+          <div class="topbar-headings">
+            <h1>Member Overview</h1>
+            <p>Welcome back, Marcus! Track daily savings, review circles, and monitor payouts.</p>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <a href="admin-dashboard.html" class="btn btn-secondary btn-sm" title="Switch to Admin Console">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.35rem;" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            Admin View
+          </a>
+          <a href="account.html" class="topbar-notification-btn" aria-label="Notifications & Alerts" title="Notifications">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notification-indicator-dot" aria-hidden="true"></span>
+          </a>
+          <a href="account.html" class="topbar-user-pill" title="My Profile & Settings">
+            <div class="topbar-user-avatar">MV</div>
+            <span class="topbar-user-name">Marcus Vance</span>
+          </a>
+        </div>
+      </header>
+
+      <!-- Main Dashboard Content -->
+      <main class="dashboard-content">
+
+        <!-- ==================================================================
+             QUICK ACTIONS BAR
+             ================================================================== -->
+        <section class="quick-actions-card" aria-label="Quick Actions">
+          <div class="quick-actions-inner">
+            <div class="quick-action-text">
+              <h3>Fast Operations</h3>
+              <p>Quick shortcuts for daily contributions, schedule checks, and group management.</p>
+            </div>
+            <div class="quick-actions-buttons">
+              <a href="contributions.html" class="btn btn-primary btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                Make a Contribution
+              </a>
+              <a href="schedule.html" class="btn btn-secondary btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                View Schedule
+              </a>
+              <a href="groups.html" class="btn btn-secondary btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                </svg>
+                My Groups
+              </a>
+              <a href="account.html" class="btn btn-secondary btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Profile &amp; Alerts
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             SUMMARY CARDS
+             ================================================================== -->
+        <section aria-labelledby="member-kpis-heading">
+          <h2 id="member-kpis-heading" class="sr-only">Financial Summary</h2>
+          <div class="summary-cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+            
+            <!-- Card 1: Total Verified Savings -->
+            <div class="summary-card card-verified">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Total Verified Savings</span>
+                <div class="summary-card-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums">₦245,000.00</div>
+              <div class="summary-card-meta" style="color: #065F46; font-weight: 600;">
+                +₦15,000 this month (12.4% MoM)
+              </div>
+            </div>
+
+            <!-- Card 2: Expected This Month -->
+            <div class="summary-card" style="border-top: 3px solid #0284C7;">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Expected This Month</span>
+                <div class="summary-card-icon" style="background-color: #E0F2FE; color: #0284C7;" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums">₦60,000.00</div>
+              <div class="summary-card-meta">24 of 30 days completed</div>
+            </div>
+
+            <!-- Card 3: Next Due Payment -->
+            <div class="summary-card card-pending">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Next Due Payment</span>
+                <div class="summary-card-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums">₦2,500.00</div>
+              <div class="summary-card-meta" style="color: #B45309; font-weight: 600;">
+                Due Tomorrow (Lagos Techies)
+              </div>
+            </div>
+
+            <!-- Card 4: Active Savings Circles -->
+            <div class="summary-card" style="border-top: 3px solid #8B5CF6;">
+              <div class="summary-card-header">
+                <span class="summary-card-title">Active Circles</span>
+                <div class="summary-card-icon" style="background-color: #EDE9FE; color: #8B5CF6;" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="summary-card-value tabular-nums">3 Groups</div>
+              <div class="summary-card-meta">100% on-time record</div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VISUAL CHARTS & PAYOUT HIGHLIGHT
+             ================================================================== -->
+        <div class="analytics-charts-grid">
+          
+          <!-- Visual 1: Personal Savings Trajectory (Vanilla SVG Area Chart) -->
+          <div class="analytics-card">
+            <div class="analytics-card-header">
+              <div>
+                <h3 class="dashboard-card-title" style="font-size: 1.05rem;">Savings Accumulation Trajectory (2026)</h3>
+                <p class="dashboard-card-subtitle">Monthly cumulative verified contributions in Nigerian Naira (₦)</p>
+              </div>
+              <span class="badge badge-verified">Consistent Habit</span>
+            </div>
+
+            <div class="analytics-chart-container" id="member-savings-chart-container">
+              <!-- Rendered via js/dashboard.js -->
+            </div>
+
+            <div class="chart-legend-row">
+              <div class="legend-item">
+                <span class="legend-dot" style="background-color: #10B981;"></span>
+                <span>Verified Monthly Savings</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-dot" style="background-color: #94A3B8;"></span>
+                <span>Target Baseline (₦20,000/mo)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual 2: Habit Consistency & Upcoming Payout -->
+          <div class="dashboard-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div class="dashboard-card-header" style="margin-bottom: 1rem;">
+                <h3 class="dashboard-card-title" style="font-size: 1.05rem;">Savings Habit Reliability</h3>
+                <span class="badge badge-verified">Grade A+</span>
+              </div>
+
+              <!-- Reliability Ring -->
+              <div style="display: flex; align-items: center; gap: 1.5rem; padding: 0.5rem 0 1.25rem 0;">
+                <div style="position: relative; width: 92px; height: 92px; flex-shrink: 0;">
+                  <svg viewBox="0 0 36 36" style="width: 100%; height: 100%; transform: rotate(-90deg);">
+                    <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#E2E8F0" stroke-width="3.5" />
+                    <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#10B981" stroke-width="3.5" stroke-dasharray="94, 100" stroke-linecap="round" />
+                  </svg>
+                  <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <span style="font-size: 1.15rem; font-weight: 800; color: #0B1220;">94%</span>
+                    <span style="font-size: 0.625rem; font-weight: 700; color: #64748B; text-transform: uppercase;">Streak</span>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 style="font-size: 0.95rem; font-weight: 700; color: #0B1220; margin-bottom: 0.25rem;">28-Day Consistency Streak</h4>
+                  <p style="font-size: 0.8rem; color: #64748B; line-height: 1.4;">
+                    You have paid 28 of the last 30 daily contribution deadlines without missing a grace window.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Next Scheduled Payout Banner -->
+            <div style="background: linear-gradient(135deg, #0B1220 0%, #111C2E 100%); border-radius: 12px; padding: 1.25rem; color: #FFFFFF;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.35rem;">
+                <span style="font-size: 0.725rem; text-transform: uppercase; letter-spacing: 0.06em; color: #10B981; font-weight: 700;">Scheduled Payout Turn</span>
+                <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #A7F3D0; border: 1px solid rgba(16, 185, 129, 0.4);">Turn #4 of 12</span>
+              </div>
+              <div style="font-size: 1.45rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.2rem;">₦60,000.00 Lump Sum</div>
+              <div style="font-size: 0.8rem; color: #94A3B8;">Target Delivery: Thursday, Nov 05, 2026</div>
+              <div style="margin-top: 0.85rem;">
+                <a href="schedule.html" class="btn btn-outline btn-sm" style="color: #FFFFFF; border-color: rgba(255,255,255,0.25); width: 100%; justify-content: center;">
+                  Open Full Payout Calendar
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ==================================================================
+             ACTIVE SAVINGS GROUPS
+             ================================================================== -->
+        <section aria-labelledby="groups-section-heading">
+          <div class="dashboard-card-header" style="padding-bottom: 0.85rem; margin-bottom: 1.25rem;">
+            <div>
+              <h2 id="groups-section-heading" class="dashboard-card-title">My Active Savings Circles</h2>
+              <p class="dashboard-card-subtitle">Contribution clubs where you are an active daily participant.</p>
+            </div>
+            <a href="groups.html" class="btn btn-outline btn-sm">Explore All Circles</a>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.25rem;">
+            
+            <!-- Group Card 1 -->
+            <div class="dashboard-card" style="padding: 1.5rem; border-left: 4px solid #10B981;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                <div>
+                  <span class="badge badge-verified" style="margin-bottom: 0.4rem;">Daily Esusu</span>
+                  <h3 style="font-size: 1.05rem; font-weight: 700; color: #0B1220;">Lagos Techies Thrift Club</h3>
+                </div>
+                <div style="font-size: 1.15rem; font-weight: 800; color: #0B1220;">₦5,000<span style="font-size: 0.75rem; font-weight: 500; color: #64748B;">/day</span></div>
+              </div>
+              <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 1rem; line-height: 1.4;">
+                Daily rotation savings circle for Lagos software professionals with automated lump-sum bank payouts.
+              </p>
+              
+              <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 0.75rem; margin-bottom: 1rem;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; margin-bottom: 0.35rem;">
+                  <span style="color: #64748B;">Cycle Progress</span>
+                  <span style="font-weight: 700; color: #0B1220;">83% (25/30 Days)</span>
+                </div>
+                <div style="height: 6px; background-color: #E2E8F0; border-radius: 3px; overflow: hidden;">
+                  <div style="width: 83%; height: 100%; background-color: #10B981; border-radius: 3px;"></div>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.775rem; color: #64748B;">
+                <span>12 Members</span>
+                <a href="groups.html" class="btn btn-secondary btn-sm" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">View Group</a>
+              </div>
+            </div>
+
+            <!-- Group Card 2 -->
+            <div class="dashboard-card" style="padding: 1.5rem; border-left: 4px solid #0284C7;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                <div>
+                  <span class="badge" style="background-color: #E0F2FE; color: #0284C7; border: 1px solid #BAE6FD; margin-bottom: 0.4rem;">Family Thrift</span>
+                  <h3 style="font-size: 1.05rem; font-weight: 700; color: #0B1220;">Family Daily Payout Club</h3>
+                </div>
+                <div style="font-size: 1.15rem; font-weight: 800; color: #0B1220;">₦2,500<span style="font-size: 0.75rem; font-weight: 500; color: #64748B;">/day</span></div>
+              </div>
+              <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 1rem; line-height: 1.4;">
+                Private savings pool for relatives focused on emergency reserves and school fee buffers.
+              </p>
+              
+              <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 0.75rem; margin-bottom: 1rem;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; margin-bottom: 0.35rem;">
+                  <span style="color: #64748B;">Cycle Progress</span>
+                  <span style="font-weight: 700; color: #0B1220;">60% (18/30 Days)</span>
+                </div>
+                <div style="height: 6px; background-color: #E2E8F0; border-radius: 3px; overflow: hidden;">
+                  <div style="width: 60%; height: 100%; background-color: #0284C7; border-radius: 3px;"></div>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.775rem; color: #64748B;">
+                <span>8 Members</span>
+                <a href="groups.html" class="btn btn-secondary btn-sm" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">View Group</a>
+              </div>
+            </div>
+
+            <!-- Group Card 3 -->
+            <div class="dashboard-card" style="padding: 1.5rem; border-left: 4px solid #F59E0B;">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                <div>
+                  <span class="badge badge-pending" style="margin-bottom: 0.4rem;">Cooperative</span>
+                  <h3 style="font-size: 1.05rem; font-weight: 700; color: #0B1220;">Market Traders Daily Esusu</h3>
+                </div>
+                <div style="font-size: 1.15rem; font-weight: 800; color: #0B1220;">₦1,000<span style="font-size: 0.75rem; font-weight: 500; color: #64748B;">/day</span></div>
+              </div>
+              <p style="font-size: 0.8rem; color: #64748B; margin-bottom: 1rem; line-height: 1.4;">
+                Micro-savings pool designed for everyday business cash flow management and inventory reinvestment.
+              </p>
+              
+              <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 0.75rem; margin-bottom: 1rem;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; margin-bottom: 0.35rem;">
+                  <span style="color: #64748B;">Cycle Progress</span>
+                  <span style="font-weight: 700; color: #0B1220;">90% (27/30 Days)</span>
+                </div>
+                <div style="height: 6px; background-color: #E2E8F0; border-radius: 3px; overflow: hidden;">
+                  <div style="width: 90%; height: 100%; background-color: #F59E0B; border-radius: 3px;"></div>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.775rem; color: #64748B;">
+                <span>20 Members</span>
+                <a href="groups.html" class="btn btn-secondary btn-sm" style="padding: 0.35rem 0.75rem; font-size: 0.75rem;">View Group</a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             RECENT CONTRIBUTIONS & PAYMENT HISTORY
+             ================================================================== -->
+        <section class="dashboard-card" aria-labelledby="history-heading">
+          <div class="dashboard-card-header">
+            <div>
+              <h2 id="history-heading" class="dashboard-card-title">Recent Contribution Ledger</h2>
+              <p class="dashboard-card-subtitle">Latest verified deposits and pending confirmation slips.</p>
+            </div>
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <select id="member-filter-status" class="form-select" style="padding: 0.4rem 0.75rem; font-size: 0.8125rem;" aria-label="Filter payment status">
+                <option value="all">All Statuses</option>
+                <option value="verified">Verified Only</option>
+                <option value="pending">Pending Only</option>
+              </select>
+              <a href="contributions.html" class="btn btn-primary btn-sm">Submit New Payment</a>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="dashboard-table" aria-label="Contributions Table">
+              <thead>
+                <tr>
+                  <th scope="col">Payment Date</th>
+                  <th scope="col">Circle / Group</th>
+                  <th scope="col">Amount (₦)</th>
+                  <th scope="col">Method</th>
+                  <th scope="col">Reference</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Receipt</th>
+                </tr>
+              </thead>
+              <tbody id="member-contributions-tbody">
+                <!-- Dynamically populated via js/dashboard.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       TOAST CONTAINER
+       ========================================================================== -->
+  <div class="admin-toast-container" id="admin-toast-container" aria-live="polite"></div>
+
+  <!-- Vanilla JavaScript Controller -->
+  <script src="./js/dashboard.js"></script>
+</body>
+</html>
